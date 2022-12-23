@@ -15,9 +15,9 @@ jobs:
       postgres:
         image: postgres:14-alpine
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+          POSTGRES_USER: giw
+          POSTGRES_PASSWORD: giwsecret
+          POSTGRES_DB: giw
         ports:
           - 5432:5432
     steps:
@@ -29,9 +29,9 @@ jobs:
       - name: 🌍 Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: 📄 Copy empty .env.example to .env
+      - name: 📄 Copy empty .env.test to .env
         run: |
-          cp .env.example .env
+          cp .env.test .env
       - name: ✨ Black, isort, flake8 & djlint
         run: |
           make quality
