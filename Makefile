@@ -10,11 +10,24 @@ web-prompt:
 
 .PHONY: test-unit
 test-unit:
-	python manage.py test --settings git_inclusion_website.settings_test
+	python manage.py test --settings config.settings_test
 
 .PHONY: test-e2e
 test-e2e:
-	python manage.py behave --settings git_inclusion_website.settings_test
+	python manage.py behave --settings config.settings_test
 
 .PHONY: test
 test: test-e2e test-unit
+
+.PHONY: quality
+quality:
+	black --check --exclude=venv .
+	isort --check --skip-glob="**/migrations" --extend-skip-glob="venv" .
+	flake8 --count --show-source --statistics --exclude=venv .
+	djlint --lint --check --use-gitignore .
+
+.PHONY: fix
+fix:
+	black --exclude=venv .
+	isort --skip-glob="**/migrations" --extend-skip-glob="venv" .
+	djlint --reformat --use-gitignore .
