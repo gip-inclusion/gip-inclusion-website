@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Postgresql service config
+.my_pgpass
+
+# Pycharm stuff
+.idea
+
+# Mac stuff
+.DS_Store
+
+# VSCode
+.VSCode
