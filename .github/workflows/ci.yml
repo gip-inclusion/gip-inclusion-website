@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DJANGO_SETTINGS_MODULE: config.settings_test
+      PYTHONPATH: .
     strategy:
       matrix:
         python-version: ["3.10"]
