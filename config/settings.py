@@ -35,13 +35,25 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
 
-ALLOWED_HOSTS = ["localhost", os.getenv("HOST_URL")]
+HOST_URL = os.getenv("HOST_URL", "127.0.0.1, localhost")
 
+ALLOWED_HOSTS = HOST_URL.replace(" ", "").split(",")
 
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.admin",
+    "wagtail.search",
+    "wagtail",
+    "wagtail.contrib.modeladmin",
+    "wagtailmenus",
+    "taggit",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -49,6 +61,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "widget_tweaks",
     "dsfr",
+    "sass_processor",
+    "cms",
 ]
 
 MIDDLEWARE = [
@@ -59,6 +73,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -78,6 +93,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "dsfr.context_processors.site_config",
+                "wagtailmenus.context_processors.wagtailmenus",
             ],
         },
     },
@@ -130,17 +146,56 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-# https://whitenoise.evans.io/en/latest/
 
-STATIC_URL = "/static/"
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "sass_processor.finders.CssFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+]
+
+# Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_URL = "static/"
 STATIC_ROOT = "staticfiles"
 
-STATIC_URL = "/static/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MOCK_EXTERNAL_API = os.getenv("MOCK_EXTERNAL_API", "False")
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 60 * 60
+
+# Wagtail settings
+# https://docs.wagtail.org/en/stable/reference/settings.html
+
+WAGTAIL_SITE_NAME = "La plateforme de l'inclusion"
+
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+WAGTAILADMIN_BASE_URL = f"{os.getenv('HOST_PROTO', 'https')}://{HOST_URL[-1]}"
+
+# Disable Gravatar service
+WAGTAIL_GRAVATAR_PROVIDER_URL = None
+
+WAGTAIL_RICHTEXT_FIELD_FEATURES = [
+    "h2",
+    "h3",
+    "h4",
+    "bold",
+    "italic",
+    "link",
+    "document-link",
+    "image",
+    "embed",
+]
+
+WAGTAILEMBEDS_RESPONSIVE_HTML = True
+WAGTAIL_MODERATION_ENABLED = False

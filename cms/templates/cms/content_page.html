@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% block title %}
+    <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
+{% endblock title %}
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description" content="{{ page.search_description }}">
+    {% endblock description %}
+{% endif %}
+{% block content %}
+    {# Display Django message info from previous form #}
+    {% if messages %}
+        <div class="fr-container fr-mt-6w">
+            <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-12">
+                    {% for message in messages %}
+                        {% if message.tags == "success" %}
+                            <div class="fr-alert fr-alert--success fr-alert--sm fr-mb-5w"
+                                 role="status">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% elif message.tags == "info" %}
+                            <div class="fr-alert fr-alert--info fr-alert--sm fr-mb-5w" role="status">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% elif message.tags == "error" %}
+                            <div class="fr-alert fr-alert--error fr-alert--sm fr-mb-5w" role="alert">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% for block in page.body %}
+        {% if block.block_type == 'title' %}
+            <div class="fr-container fr-mt-6w">
+                <div class="fr-grid-row fr-grid-row--gutters">
+                    <div class="fr-col-12{% if not block.value.large %} fr-col-offset-md-2 fr-col-md-8{% endif %}">
+                        <h1 class="fr-display--sm">{{ block.value.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        {% elif block.block_type == 'imageandtext' %}
+            {% include "cms/blocks/imageandtext.html" %}
+        {% elif block.block_type == 'alert' %}
+            {% include "cms/blocks/alert.html"  %}
+        {% elif block.block_type == 'callout' %}
+            {% include "cms/blocks/callout.html"  %}
+        {% elif block.block_type == 'quote' %}
+            <div class="fr-background-alt--blue-france fr-my-6w fr-py-6w">
+                <div class="fr-container">
+                    <div class="fr-grid-row fr-grid-row--gutters">
+                        <div class="fr-col-8 fr-col-offset-2">{% include "cms/blocks/quote.html"  %}</div>
+                    </div>
+                </div>
+            </div>
+        {% elif block.block_type == 'image' %}
+            <div class="fr-container fr-my-3w">
+                <div class="fr-grid-row fr-grid-row--gutters">
+                    <div class="fr-col-12">{% include "cms/blocks/image.html"  %}</div>
+                </div>
+            </div>
+        {% elif block.block_type == 'video' %}
+            <div class="fr-container fr-my-3w">
+                <div class="fr-grid-row fr-grid-row--gutters">
+                    <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-8">{% include "cms/blocks/video.html"  %}</div>
+                </div>
+            </div>
+        {% elif block.block_type == 'multicolumns' %}
+            {% include "cms/blocks/multicolumns.html"  %}
+        {% elif block.block_type == 'paragraph' %}
+            <div class="fr-container">
+                <div class="fr-grid-row fr-grid-row--gutters">
+                    <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-8">{{ block.value|richtext }}</div>
+                </div>
+            </div>
+        {% elif block.block_type == 'paragraphlarge' %}
+            <div class="fr-container">
+                <div class="fr-grid-row fr-grid-row--gutters">
+                    <div class="fr-col-12">{{ block.value|richtext }}</div>
+                </div>
+            </div>
+        {% elif block.block_type == 'faq' %}
+            {% include "cms/blocks/faq.html" with faq_id=forloop.counter0 %}
+        {% elif block.block_type == 'stepper' %}
+            {% include "cms/blocks/stepper.html" %}
+        {% endif %}
+    {% endfor %}
+{% endblock content %}
