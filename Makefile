@@ -24,7 +24,6 @@ quality:
 	black --check --exclude=venv .
 	isort --check --skip-glob="**/migrations" --extend-skip-glob="venv" .
 	flake8 --count --show-source --statistics --exclude=venv .
-	djlint --lint --check --use-gitignore .
 
 .PHONY: fix
 fix:
