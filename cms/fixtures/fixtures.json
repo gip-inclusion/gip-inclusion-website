@@ -1,0 +1,738 @@
+[
+    {
+        "model": "wagtailcore.locale",
+        "pk": 1,
+        "fields": {
+            "language_code": "fr"
+        }
+    },
+    {
+        "model": "wagtailcore.site",
+        "pk": 1,
+        "fields": {
+            "hostname": "localhost",
+            "port": 80,
+            "site_name": "",
+            "root_page": 2,
+            "is_default_site": true
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Moderators",
+            "permissions": [
+                [
+                    "access_admin",
+                    "wagtailadmin",
+                    "admin"
+                ],
+                [
+                    "add_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "change_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "choose_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "delete_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "add_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "change_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "choose_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "delete_image",
+                    "wagtailimages",
+                    "image"
+                ]
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Editors",
+            "permissions": [
+                [
+                    "access_admin",
+                    "wagtailadmin",
+                    "admin"
+                ],
+                [
+                    "add_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "change_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "choose_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "delete_document",
+                    "wagtaildocs",
+                    "document"
+                ],
+                [
+                    "add_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "change_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "choose_image",
+                    "wagtailimages",
+                    "image"
+                ],
+                [
+                    "delete_image",
+                    "wagtailimages",
+                    "image"
+                ]
+            ]
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$260000$iAni1OtFy4XpCStRZODaXS$vvz+f3ep3sh5ejDg/chV5awFEl2cfkLuoyv0FEpe6cY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "redacteur",
+            "first_name": "",
+            "last_name": "",
+            "email": "redacteur@exemple.fr",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-12-29T17:25:20.840Z",
+            "groups": [
+                [
+                    "Moderators"
+                ],
+                [
+                    "Editors"
+                ]
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "wagtailcore.collection",
+        "pk": 1,
+        "fields": {
+            "path": "0001",
+            "depth": 1,
+            "numchild": 0,
+            "name": "Root"
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "choose_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "choose_document",
+                "wagtaildocs",
+                "document"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "collection": 1,
+            "permission": [
+                "choose_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.groupcollectionpermission",
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "collection": 1,
+            "permission": [
+                "choose_image",
+                "wagtailimages",
+                "image"
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.page",
+        "pk": 1,
+        "fields": {
+            "path": "0001",
+            "depth": 1,
+            "numchild": 1,
+            "translation_key": "40d42a3c-cec8-44bc-9fe0-f84a487e3110",
+            "locale": 1,
+            "latest_revision": null,
+            "live": true,
+            "has_unpublished_changes": false,
+            "first_published_at": null,
+            "last_published_at": null,
+            "live_revision": null,
+            "go_live_at": null,
+            "expire_at": null,
+            "expired": false,
+            "locked": false,
+            "locked_at": null,
+            "locked_by": null,
+            "title": "Root",
+            "draft_title": "Root",
+            "slug": "root",
+            "content_type": [
+                "wagtailcore",
+                "page"
+            ],
+            "url_path": "/",
+            "owner": null,
+            "seo_title": "",
+            "show_in_menus": false,
+            "search_description": "",
+            "latest_revision_created_at": null,
+            "alias_of": null
+        }
+    },
+    {
+        "model": "wagtailcore.page",
+        "pk": 2,
+        "fields": {
+            "path": "00010001",
+            "depth": 2,
+            "numchild": 1,
+            "translation_key": "8bc78a49-3bb7-4521-b5ac-9adc54081de9",
+            "locale": 1,
+            "latest_revision": 1,
+            "live": true,
+            "has_unpublished_changes": false,
+            "first_published_at": "2022-12-29T17:50:21.571Z",
+            "last_published_at": "2022-12-29T17:50:21.571Z",
+            "live_revision": 1,
+            "go_live_at": null,
+            "expire_at": null,
+            "expired": false,
+            "locked": false,
+            "locked_at": null,
+            "locked_by": null,
+            "title": "Accueil — La plateforme de l'inclusion",
+            "draft_title": "Accueil — La plateforme de l'inclusion",
+            "slug": "home",
+            "content_type": [
+                "cms",
+                "contentpage"
+            ],
+            "url_path": "/home/",
+            "owner": [
+                "redacteur"
+            ],
+            "seo_title": "Accueil",
+            "show_in_menus": false,
+            "search_description": "",
+            "latest_revision_created_at": "2022-12-29T17:50:21.556Z",
+            "alias_of": null
+        }
+    },
+    {
+        "model": "wagtailcore.page",
+        "pk": 3,
+        "fields": {
+            "path": "000100010001",
+            "depth": 3,
+            "numchild": 0,
+            "translation_key": "b49911fd-ca1b-4016-9316-ed9a40ba96bb",
+            "locale": 1,
+            "latest_revision": 2,
+            "live": true,
+            "has_unpublished_changes": false,
+            "first_published_at": "2022-12-29T18:50:18.111Z",
+            "last_published_at": "2022-12-29T18:50:18.111Z",
+            "live_revision": 2,
+            "go_live_at": null,
+            "expire_at": null,
+            "expired": false,
+            "locked": false,
+            "locked_at": null,
+            "locked_by": null,
+            "title": "Nos services",
+            "draft_title": "Nos services",
+            "slug": "nos-services",
+            "content_type": [
+                "cms",
+                "contentpage"
+            ],
+            "url_path": "/home/nos-services/",
+            "owner": [
+                "redacteur"
+            ],
+            "seo_title": "",
+            "show_in_menus": false,
+            "search_description": "",
+            "latest_revision_created_at": "2022-12-29T18:50:18.096Z",
+            "alias_of": null
+        }
+    },
+    {
+        "model": "wagtailcore.revision",
+        "pk": 1,
+        "fields": {
+            "content_type": [
+                "cms",
+                "contentpage"
+            ],
+            "base_content_type": [
+                "wagtailcore",
+                "page"
+            ],
+            "object_id": "1",
+            "submitted_for_moderation": false,
+            "created_at": "2022-12-29T17:50:21.556Z",
+            "user": [
+                "redacteur"
+            ],
+            "object_str": "La plateforme de l'inclusion",
+            "content": {
+                "pk": 1,
+                "body": "[{\"type\": \"title\", \"value\": {\"title\": \"La plateforme de l'inclusion\", \"large\": true}, \"id\": \"2a3ce741-62f0-4018-a007-5926807833f0\"}]",
+                "live": true,
+                "path": "00010001",
+                "slug": "home",
+                "depth": 2,
+                "owner": 1,
+                "title": "Accueil — La plateforme de l'inclusion",
+                "locale": 1,
+                "locked": false,
+                "expired": false,
+                "alias_of": null,
+                "numchild": 0,
+                "url_path": "/home/",
+                "expire_at": null,
+                "locked_at": null,
+                "locked_by": null,
+                "seo_title": "Accueil",
+                "go_live_at": null,
+                "draft_title": "Accueil — La plateforme de l'inclusion",
+                "content_type": 47,
+                "live_revision": null,
+                "show_in_menus": false,
+                "latest_revision": null,
+                "translation_key": "8bc78a49-3bb7-4521-b5ac-9adc54081de9",
+                "last_published_at": null,
+                "first_published_at": null,
+                "search_description": "",
+                "wagtail_admin_comments": [],
+                "has_unpublished_changes": true,
+                "latest_revision_created_at": "2022-12-29T17:50:15.984Z"
+            },
+            "approved_go_live_at": null
+        }
+    },
+    {
+        "model": "wagtailcore.revision",
+        "pk": 2,
+        "fields": {
+            "content_type": [
+                "cms",
+                "contentpage"
+            ],
+            "base_content_type": [
+                "wagtailcore",
+                "page"
+            ],
+            "object_id": "2",
+            "submitted_for_moderation": false,
+            "created_at": "2022-12-29T18:50:18.096Z",
+            "user": [
+                "redacteur"
+            ],
+            "object_str": "Nos services",
+            "content": {
+                "pk": 2,
+                "body": "[{\"type\": \"title\", \"value\": {\"title\": \"Nos services\", \"large\": true}, \"id\": \"618befd1-b423-4313-bd73-6d74aa84803b\"}]",
+                "live": false,
+                "path": "000100010001",
+                "slug": "nos-services",
+                "depth": 3,
+                "owner": 1,
+                "title": "Nos services",
+                "locale": 1,
+                "locked": false,
+                "expired": false,
+                "alias_of": null,
+                "numchild": 0,
+                "url_path": "/home/nos-services/",
+                "expire_at": null,
+                "locked_at": null,
+                "locked_by": null,
+                "seo_title": "",
+                "go_live_at": null,
+                "draft_title": "Nos services",
+                "content_type": 47,
+                "live_revision": null,
+                "show_in_menus": false,
+                "latest_revision": null,
+                "translation_key": "b49911fd-ca1b-4016-9316-ed9a40ba96bb",
+                "last_published_at": null,
+                "first_published_at": null,
+                "search_description": "",
+                "wagtail_admin_comments": [],
+                "has_unpublished_changes": true,
+                "latest_revision_created_at": "2022-12-29T18:50:02.062Z"
+            },
+            "approved_go_live_at": null
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 1,
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "page": 1,
+            "permission_type": "add"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 2,
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "page": 1,
+            "permission_type": "edit"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 3,
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "page": 1,
+            "permission_type": "publish"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 4,
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "page": 1,
+            "permission_type": "add"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 5,
+        "fields": {
+            "group": [
+                "Editors"
+            ],
+            "page": 1,
+            "permission_type": "edit"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 6,
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "page": 1,
+            "permission_type": "lock"
+        }
+    },
+    {
+        "model": "wagtailcore.grouppagepermission",
+        "pk": 7,
+        "fields": {
+            "group": [
+                "Moderators"
+            ],
+            "page": 1,
+            "permission_type": "unlock"
+        }
+    },
+    {
+        "model": "wagtailcore.workflowpage",
+        "pk": 1,
+        "fields": {
+            "workflow": 1
+        }
+    },
+    {
+        "model": "wagtailcore.workflowtask",
+        "pk": 1,
+        "fields": {
+            "sort_order": 0,
+            "workflow": 1,
+            "task": 1
+        }
+    },
+    {
+        "model": "wagtailcore.task",
+        "pk": 1,
+        "fields": {
+            "name": "Moderators approval",
+            "content_type": [
+                "wagtailcore",
+                "groupapprovaltask"
+            ],
+            "active": true
+        }
+    },
+    {
+        "model": "wagtailcore.workflow",
+        "pk": 1,
+        "fields": {
+            "name": "Moderators approval",
+            "active": true
+        }
+    },
+    {
+        "model": "wagtailcore.groupapprovaltask",
+        "pk": 1,
+        "fields": {
+            "task_ptr": 1,
+            "groups": [
+                [
+                    "Moderators"
+                ]
+            ]
+        }
+    },
+    {
+        "model": "wagtailcore.pagesubscription",
+        "pk": 1,
+        "fields": {
+            "user": [
+                "redacteur"
+            ],
+            "page": 2,
+            "comment_notifications": false
+        }
+    },
+    {
+        "model": "wagtailcore.pagesubscription",
+        "pk": 2,
+        "fields": {
+            "user": [
+                "redacteur"
+            ],
+            "page": 3,
+            "comment_notifications": true
+        }
+    },
+    {
+        "model": "cms.contentpage",
+        "pk": 2,
+        "fields": {
+            "page_ptr": 2,
+            "body": "[{\"id\": \"f14994eb-c9ba-4d63-bbc8-d0511a1f6a00\", \"type\": \"title\", \"value\": {\"large\": true, \"title\": \"La plateforme de l'inclusion\"}}]"
+        }
+    },
+    {
+        "model": "cms.contentpage",
+        "pk": 3,
+        "fields": {
+            "page_ptr": 3,
+            "body": "[{\"id\": \"618befd1-b423-4313-bd73-6d74aa84803b\", \"type\": \"title\", \"value\": {\"large\": true, \"title\": \"Nos services\"}}]"
+        }
+    },
+    {
+        "model": "wagtailmenus.mainmenuitem",
+        "pk": 1,
+        "fields": {
+            "sort_order": 0,
+            "link_page": null,
+            "link_url": "/",
+            "url_append": "",
+            "handle": "",
+            "link_text": "Accueil",
+            "allow_subnav": false,
+            "menu": 1
+        }
+    },
+    {
+        "model": "wagtailmenus.mainmenu",
+        "pk": 1,
+        "fields": {
+            "site": 1,
+            "max_levels": 2
+        }
+    }
+]
