@@ -32,7 +32,7 @@ jobs:
       - name: 📄 Copy empty .env.test to .env
         run: |
           cp .env.test .env
-      - name: ✨ Black, isort, flake8 & djlint
+      - name: ✨ Black, isort, flake8
         run: |
           make quality
       - name: 🚧 Check pending migrations
