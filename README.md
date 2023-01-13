@@ -87,3 +87,10 @@ cp .env.example .env
 ```sh
 docker-compose up
 ```
+
+### Premier lancement
+
+Pour initialiser le site avec notamment la page d'accueil au bon format :
+```sh
+python manage.py loaddata cms/fixtures/fixtures.json
+```
