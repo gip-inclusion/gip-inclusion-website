@@ -16,7 +16,9 @@
         </div>
     </div>
     <div class="fr-card__header">
+        {% if block.value.image %}
         <div class="fr-card__img">{% image block.value.image original class="fr-responsive-img" %}</div>
+        {% endif %}
         {% if block.value.badge_text %}
             <ul class="fr-badges-group">
                 <li>
