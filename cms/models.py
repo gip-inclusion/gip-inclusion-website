@@ -119,7 +119,7 @@ badge_level_choices = [
 class CardBlock(blocks.StructBlock):
     title = blocks.CharBlock(label="Titre")
     text = blocks.TextBlock(label="Texte")
-    image = ImageChooserBlock(label="Image")
+    image = ImageChooserBlock(label="Image", required=False)
     url = blocks.URLBlock(label="Lien", required=False)
     document = DocumentChooserBlock(
         label="ou Document",
@@ -155,6 +155,20 @@ class MultiColumnsBlock(blocks.StreamBlock):
     video = VideoBlock(label="Vidéo")
     card = CardBlock(label="Carte")
     quote = QuoteBlock(label="Citation")
+
+
+class MultiColumnsWithTitleBlock(blocks.StructBlock):
+    bg_image = ImageChooserBlock(label="Image d'arrière plan", required=False)
+    bg_color = blocks.RegexBlock(
+        label="Couleur d'arrière plan au format hexa (Ex: #f5f5fe)",
+        regex=r"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+        error_messages={
+            "invalid": "La couleur n'est pas correcte, le format doit être #fff ou #f5f5fe"
+        },
+        required=False,
+    )
+    title = blocks.CharBlock(label="Titre", required=False)
+    columns = MultiColumnsBlock(label="Multi-colonnes")
 
 
 class QuestionBlock(blocks.StructBlock):
@@ -202,7 +216,7 @@ class ContentPage(Page):
             ("callout", CalloutBlock(label="Texte mise en avant")),
             ("quote", QuoteBlock(label="Citation")),
             ("video", VideoBlock(label="Vidéo")),
-            ("multicolumns", MultiColumnsBlock(label="Multi-colonnes")),
+            ("multicolumns", MultiColumnsWithTitleBlock(label="Multi-colonnes")),
             ("faq", FaqBlock(label="Questions fréquentes")),
             ("stepper", StepperBlock(label="Étapes")),
         ],
