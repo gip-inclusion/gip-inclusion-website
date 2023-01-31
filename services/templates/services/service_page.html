@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block title %}
+    <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
+{% endblock title %}
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description" content="{{ page.search_description }}" />
+    {% endblock description %}
+{% endif %}
+{% block content %}
+    <div class="fr-container fr-py-6w" >
+        <div class="fr-grid-row fr-grid-row--gutters">
+            <div class="fr-col-12">
+                <h1>{{ page.beta_name }}</h1>
+                {% if page.beta_link %}
+                    <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre" href="{{ page.beta_link }}" target="_blank" rel="noopener" class="fr-link">Accéder à {{ page.beta_name }}</a>
+                {% endif %}
+                <p class="fr-my-2w">{{ page.beta_pitch }}</p>
+            </div>
+        </div>
+    </div>
+    <div style="background: #f5f5fe">
+        <div class="fr-container">
+            <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-12 fr-col-md-6 fr-py-3w">
+                    <h2 class="fr-my-3w">Le problème</h2>
+                    <p class="fr-pr-8w">{{ page.beta_problem }}</p>
+                </div>
+                <div class="fr-col-12 fr-col-md-6 fr-py-3w">
+                    <h2 class="fr-my-3w">Notre service</h2>
+                    <p class="fr-pr-8w">{{ page.beta_service }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

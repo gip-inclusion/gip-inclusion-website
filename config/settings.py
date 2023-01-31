@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     "dsfr",
     "sass_processor",
     "cms",
+    "services",
 ]
 
 MIDDLEWARE = [
