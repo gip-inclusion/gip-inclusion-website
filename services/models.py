@@ -15,6 +15,7 @@ from cms.models import (
     StepperBlock,
     VideoBlock,
 )
+from services.enums import Phase
 
 
 class ServicePage(Page):
@@ -24,6 +25,12 @@ class ServicePage(Page):
     beta_link = models.URLField("Lien vers le service", max_length=255, blank=True)
     beta_problem = models.TextField("Le problème", blank=True)
     beta_service = models.TextField("Notre service", blank=True)
+    beta_last_phase = models.CharField(
+        "Maturité",
+        max_length=20,
+        choices=Phase.choices,
+        blank=True,
+    )
 
     body = StreamField(
         [

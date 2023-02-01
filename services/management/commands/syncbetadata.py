@@ -36,6 +36,7 @@ class Command(BaseCommand):
                 )
                 service = self.get_markdown_section("Notre service", markdown_content)
                 problem = self.get_markdown_section("Le problème", markdown_content)
+                phases = data["attributes"].get("phases", [{"name": ""}])
                 attributes = {
                     "beta_id": data["id"],
                     "title": data["attributes"]["name"],
@@ -43,6 +44,7 @@ class Command(BaseCommand):
                     "link": link,
                     "problem": problem,
                     "service": service,
+                    "last_phase": phases[-1]["name"],
                 }
                 self.create_or_update_service(data["id"], attributes)
                 services_count += 1
@@ -70,6 +72,7 @@ class Command(BaseCommand):
             service.beta_link = attributes["link"]
             service.beta_problem = attributes["problem"]
             service.beta_service = attributes["service"]
+            service.beta_last_phase = attributes["last_phase"]
             service.save()
             self.stdout.write(f"Service {service.beta_name} updated !")
         except ServicePage.DoesNotExist:
@@ -81,6 +84,7 @@ class Command(BaseCommand):
                 beta_link=attributes["link"],
                 beta_problem=attributes["problem"],
                 beta_service=attributes["service"],
+                beta_last_phase=attributes["last_phase"],
             )
 
             try:
