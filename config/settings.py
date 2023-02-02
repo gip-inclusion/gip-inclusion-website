@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "dsfr",
     "sass_processor",
+    "markdownify",
     "cms",
     "services",
 ]

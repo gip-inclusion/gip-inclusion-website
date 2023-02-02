@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags markdownify %}
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
 {% endblock title %}
@@ -25,11 +25,11 @@
             <div class="fr-grid-row fr-grid-row--gutters">
                 <div class="fr-col-12 fr-col-md-6 fr-py-3w">
                     <h2 class="fr-my-3w">Le problème</h2>
-                    <p class="fr-pr-8w">{{ page.beta_problem }}</p>
+                    <p class="fr-pr-8w">{{ page.beta_problem|markdownify|linebreaksbr }}</p>
                 </div>
                 <div class="fr-col-12 fr-col-md-6 fr-py-3w">
                     <h2 class="fr-my-3w">Notre service</h2>
-                    <p class="fr-pr-8w">{{ page.beta_service }}</p>
+                    <p class="fr-pr-8w">{{ page.beta_service|markdownify|linebreaksbr }}</p>
                 </div>
             </div>
         </div>
