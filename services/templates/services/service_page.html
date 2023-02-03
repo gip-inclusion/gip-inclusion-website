@@ -47,6 +47,8 @@
             </div>
         {% elif block.block_type == 'imageandtext' %}
             {% include "cms/blocks/imageandtext.html" %}
+        {% elif block.block_type == 'textandimage' %}
+            {% include "cms/blocks/textandimage.html" %}
         {% elif block.block_type == 'image' %}
             <div class="fr-container fr-my-3w">
                 <div class="fr-grid-row fr-grid-row--gutters">

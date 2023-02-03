@@ -44,7 +44,7 @@ class ImageBlock(blocks.StructBlock):
 
 
 class ImageAndTextBlock(blocks.StructBlock):
-    image = ImageChooserBlock(label="Illustration (à gauche)")
+    image = ImageChooserBlock(label="Illustration")
     image_ratio = blocks.ChoiceBlock(
         label="Largeur de l'image",
         choices=[
@@ -53,10 +53,10 @@ class ImageAndTextBlock(blocks.StructBlock):
             ("6", "6/12"),
         ],
     )
-    text = blocks.RichTextBlock(label="Texte avec mise en forme (à droite)")
+    text = blocks.RichTextBlock(label="Texte avec mise en forme")
     link_label = blocks.CharBlock(
         label="Titre du lien",
-        help_text="Le lien apparait en bas du bloc de droite, avec une flèche",
+        help_text="Le lien apparait en bas du bloc de texte, avec une flèche",
         required=False,
     )
     link_url = blocks.URLBlock(label="Lien", required=False)
@@ -212,6 +212,10 @@ class ContentPage(Page):
             (
                 "imageandtext",
                 ImageAndTextBlock(label="Bloc image à gauche et texte à droite"),
+            ),
+            (
+                "textandimage",
+                ImageAndTextBlock(label="Bloc texte à gauche et image à droite"),
             ),
             ("alert", AlertBlock(label="Message d'alerte")),
             ("callout", CalloutBlock(label="Texte mise en avant")),
