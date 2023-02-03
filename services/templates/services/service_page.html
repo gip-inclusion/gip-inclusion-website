@@ -9,12 +9,16 @@
     {% endblock description %}
 {% endif %}
 {% block content %}
-    <div class="fr-container fr-py-6w" >
+    <div class="fr-container fr-py-6w">
         <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
                 <h1>{{ page.beta_name }}</h1>
                 {% if page.beta_link %}
-                    <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre" href="{{ page.beta_link }}" target="_blank" rel="noopener" class="fr-link">Accéder à {{ page.beta_name }}</a>
+                    <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
+                       href="{{ page.beta_link }}"
+                       target="_blank"
+                       rel="noopener"
+                       class="fr-link">Accéder à {{ page.beta_name }}</a>
                 {% endif %}
                 <p class="fr-my-2w">{{ page.beta_pitch }}</p>
             </div>
@@ -75,18 +79,20 @@
             {% include "cms/blocks/stepper.html" %}
         {% endif %}
     {% endfor %}
-
-    <div class="fr-container fr-py-9w fr-my-12w" style="background-color:var(--background-alt-grey)">
+    <div class="fr-container fr-py-9w fr-my-12w"
+         style="background-color:var(--background-alt-grey)">
         <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12 fr-col-md-4 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
-                <img src="{% static 'artwork/contact.svg' %}" class="fr-responsive-img" alt=""/>
+                <img src="{% static 'artwork/contact.svg' %}"
+                     class="fr-responsive-img"
+                     alt=""/>
             </div>
             <div class="fr-col-12 fr-col-md-5 fr-col-offset-md-1 fr-px-6w fr-py-3w fr-px-md-0 fr-py-0">
                 <h2>Contactez nous</h2>
-                <p>
-                    Remplissez ce formulaire et nous vous répondrons dans les plus brefs délais !
-                </p>
-                <a class="fr-btn fr-btn--primary fr-btn--lg" href="https://tally.so/r/n0VqyP" target="_blank">Nous contacter</a>
+                <p>Remplissez ce formulaire et nous vous répondrons dans les plus brefs délais !</p>
+                <a class="fr-btn fr-btn--primary fr-btn--lg"
+                   href="https://tally.so/r/n0VqyP"
+                   target="_blank">Nous contacter</a>
             </div>
         </div>
     </div>
