@@ -9,3 +9,8 @@ class ServicesListView(ListView):
 
     def get_queryset(self):
         return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context["breadcrumb_data"] = {"current": "Nos services"}
+        return context
