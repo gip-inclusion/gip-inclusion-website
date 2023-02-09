@@ -9,7 +9,9 @@
     {% endblock description %}
 {% endif %}
 {% block content %}
-    <div class="fr-container fr-py-6w">
+    {% include "cms/breadcrumb.html" %}
+
+    <div class="fr-container fr-pb-6w">
         <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
                 {% include "services/includes/phase_badge.html" with beta_last_phase=page.beta_last_phase %}
