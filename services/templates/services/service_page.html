@@ -12,14 +12,8 @@
     <div class="fr-container fr-py-6w">
         <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
-                <h1>{{ page.beta_name }}</h1>
-                {% if page.beta_link %}
-                    <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
-                       href="{{ page.beta_link }}"
-                       target="_blank"
-                       rel="noopener"
-                       class="fr-link">Accéder à {{ page.beta_name }}</a>
-                {% endif %}
+                {% include "services/includes/phase_badge.html" with beta_last_phase=page.beta_last_phase %}
+                <h1 class="fr-mt-1w">{{ page.beta_name }}</h1>
                 <p class="fr-my-2w">{{ page.beta_pitch }}</p>
             </div>
         </div>
@@ -34,6 +28,13 @@
                 <div class="fr-col-12 fr-col-md-6 fr-py-3w">
                     <h2 class="fr-my-3w">Notre service</h2>
                     <p class="fr-pr-8w">{{ page.beta_service|markdownify|linebreaksbr }}</p>
+                    {% if page.beta_link %}
+                        <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
+                        href="{{ page.beta_link }}"
+                        target="_blank"
+                        rel="noopener"
+                        class="fr-link">Accéder à {{ page.beta_name }}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
