@@ -93,6 +93,10 @@
             {% include "cms/blocks/faq.html" with faq_id=forloop.counter0 %}
         {% elif block.block_type == 'stepper' %}
             {% include "cms/blocks/stepper.html" %}
+        {% elif block.block_type == 'separator' %}
+            <div class="fr-container">
+                <hr class="fr-mt-{{ block.value.top_margin }}w fr-mb-{{ block.value.bottom_margin }}w fr-py-1v">
+            </div>
         {% endif %}
     {% endfor %}
 {% endblock content %}
