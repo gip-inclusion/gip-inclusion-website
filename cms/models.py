@@ -39,7 +39,7 @@ class ImageBlock(blocks.StructBlock):
     alt = blocks.CharBlock(
         label="Texte alternatif (description textuelle de l'image)", required=False
     )
-    caption = blocks.CharBlock(label="Légende", required=False)
+    caption = blocks.RichTextBlock(label="Légende", required=False)
     url = blocks.URLBlock(label="Lien", required=False)
 
 
@@ -198,6 +198,15 @@ class StepperBlock(blocks.StructBlock):
     steps = StepsListBlock(label="Les étapes")
 
 
+class SeparatorBlock(blocks.StructBlock):
+    top_margin = blocks.IntegerBlock(
+        label="Espacement au dessus", min_value=0, max_value=15, default=3
+    )
+    bottom_margin = blocks.IntegerBlock(
+        label="Espacement en dessous", min_value=0, max_value=15, default=3
+    )
+
+
 class ContentPage(Page):
     body = StreamField(
         [
@@ -224,6 +233,7 @@ class ContentPage(Page):
             ("multicolumns", MultiColumnsWithTitleBlock(label="Multi-colonnes")),
             ("faq", FaqBlock(label="Questions fréquentes")),
             ("stepper", StepperBlock(label="Étapes")),
+            ("separator", SeparatorBlock(label="Séparateur")),
         ],
         blank=True,
         use_json_field=True,
