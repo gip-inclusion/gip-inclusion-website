@@ -1,25 +1,13 @@
 {% extends 'base.html' %}
-{% load static wagtailcore_tags %}
+{% load static dsfr_tags wagtailcore_tags %}
 {% block content %}
     <div style="background: url({% static 'images/fond-nos-services.png' %}) #f5f5fe no-repeat center">
-        <div class="fr-container fr-py-6w">
+        <div class="fr-container fr-pt-2w fr-pb-6w">
             <div class="fr-grid-row fr-grid-row--gutters">
                 <div class="fr-col-12">
+                    {% dsfr_breadcrumb %}
                     <h1 class="fr-display--sm">Nos services publics numériques</h1>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="fr-container fr-my-6w">
-        <div class="fr-grid-row fr-grid-row--gutters">
-            <div class="fr-col-4">
-                <form action="{% url 'services_list' %}" method="GET">
-                    <div class="fr-select-group">
-                        {{ form.phase.errors }}
-                        <label class="fr-label" for="{{ form.phase.id_for_label }}">{{ form.phase.label }}</label>
-                        {{ form.phase }}
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -32,6 +20,13 @@
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title">{{ service.beta_name }}</h3>
                                 <p class="fr-card__desc">{{ service.beta_pitch }}</p>
+                                <div class="fr-card__start">
+                                    <ul class="fr-badges-group">
+                                        <li>
+                                            {% include "services/includes/phase_badge.html" with beta_last_phase=service.beta_last_phase %}
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="fr-card__footer">
                                 <ul class="fr-links-group">

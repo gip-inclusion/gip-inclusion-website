@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
-{% load wagtailcore_tags %}
-{% load wagtailimages_tags %}
+{% load static dsfr_tags wagtailcore_tags wagtailimages_tags %}
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
 {% endblock title %}
@@ -11,6 +9,8 @@
     {% endblock description %}
 {% endif %}
 {% block content %}
+    {% include "cms/breadcrumb.html" %}
+
     {# Display Django message info from previous form #}
     {% if messages %}
         <div class="fr-container fr-mt-6w">
