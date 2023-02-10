@@ -22,11 +22,7 @@
 {% endblock service_tagline %}
 {% block header_tools %}
     <div class="fr-header__tools-links">
-        <ul class="fr-btns-group">
-            <li>
-                <a class="fr-btn" href="/nos-services">Nos services</a>
-            </li>
-        </ul>
+        {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html"  %}
     </div>
 {% endblock header_tools %}
 {% block main_menu %}
