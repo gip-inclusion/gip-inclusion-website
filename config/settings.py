@@ -220,4 +220,7 @@ WAGTAIL_RICHTEXT_FIELD_FEATURES = [
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
 WAGTAIL_MODERATION_ENABLED = False
 
-WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (("header_tools", "Menu en haut à droite"),)
+WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
+    ("header_tools", "Menu en haut à droite"),
+    ("footer", "Menu en pied de page"),
+)

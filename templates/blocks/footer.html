@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags menu_tags %}
 <div class="fr-follow">
     <div class="fr-container">
         <div class="fr-grid-row">
@@ -88,15 +88,7 @@
             </div>
         </div>
         <div class="fr-footer__bottom">
-            <ul class="fr-footer__bottom-list">
-                <li class="fr-footer__bottom-item">
-                    <a class="fr-footer__bottom-link" href="{% slugurl 'accessibilite' %}">Accessibilité</a>
-                </li>
-                <li class="fr-footer__bottom-item">
-                    <a class="fr-footer__bottom-link"
-                       href="{% slugurl 'mentions_legales' %}">Mentions légales</a>
-                </li>
-            </ul>
+            {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html"  %}
             <div class="fr-footer__bottom-copy">
                 <p>
                     Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
