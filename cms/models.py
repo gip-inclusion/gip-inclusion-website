@@ -234,6 +234,12 @@ class ContentPage(Page):
             ("faq", FaqBlock(label="Questions fréquentes")),
             ("stepper", StepperBlock(label="Étapes")),
             ("separator", SeparatorBlock(label="Séparateur")),
+            (
+                "contact",
+                blocks.StaticBlock(
+                    label="Nous contacter", template="cms/blocks/contact.html"
+                ),
+            ),
         ],
         blank=True,
         use_json_field=True,
