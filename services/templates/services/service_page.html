@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static wagtailcore_tags wagtailimages_tags markdownify %}
+{% load wagtailcore_tags wagtailimages_tags markdownify %}
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
 {% endblock title %}
@@ -84,21 +84,5 @@
             {% include "cms/blocks/stepper.html" %}
         {% endif %}
     {% endfor %}
-    <div class="fr-container fr-py-9w fr-my-12w"
-         style="background-color:var(--background-alt-grey)">
-        <div class="fr-grid-row fr-grid-row--gutters">
-            <div class="fr-col-12 fr-col-md-4 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
-                <img src="{% static 'artwork/contact.svg' %}"
-                     class="fr-responsive-img"
-                     alt=""/>
-            </div>
-            <div class="fr-col-12 fr-col-md-5 fr-col-offset-md-1 fr-px-6w fr-py-3w fr-px-md-0 fr-py-0">
-                <h2>Contactez nous</h2>
-                <p>Remplissez ce formulaire et nous vous répondrons dans les plus brefs délais !</p>
-                <a class="fr-btn fr-btn--primary fr-btn--lg"
-                   href="https://tally.so/r/n0VqyP"
-                   target="_blank">Nous contacter</a>
-            </div>
-        </div>
-    </div>
+    {% include "cms/blocks/contact.html" %}
 {% endblock content %}
