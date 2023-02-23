@@ -1,5 +1,7 @@
 from django.test import TestCase
+from django.urls import resolve
 
+from cms import views
 from cms.factories import ContentPageFactory
 
 
@@ -42,3 +44,17 @@ class CMSPageTest(TestCase):
         self.assertContains(
             response, '<meta name="description" content="" />', count=1, html=True
         )
+
+
+class TestPlanDuSite(TestCase):
+    def test_plan_du_site_url_calls_right_view(self):
+        match = resolve("/plan-du-site/")
+        self.assertEqual(match.func, views.plan_du_site_view)
+
+    def test_plan_du_site_url_calls_right_template(self):
+        response = self.client.get("/plan-du-site/")
+        self.assertTemplateUsed(response, "plan_du_site.html")
+
+    def test_plan_du_site_response_contains_title(self):
+        response = self.client.get("/plan-du-site/")
+        self.assertContains(response, "Plan du site")
