@@ -20,13 +20,6 @@
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title">{% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}</h3>
                                 <p class="fr-card__desc">{{ service.beta_pitch }}</p>
-                                <div class="fr-card__start">
-                                    <ul class="fr-badges-group">
-                                        <li>
-                                            {% include "services/includes/phase_badge.html" with beta_last_phase=service.beta_last_phase %}
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                             <div class="fr-card__footer">
                                 <ul class="fr-links-group">
