@@ -32,6 +32,24 @@ class ServicePage(Page):
         blank=True,
     )
 
+    # Customizable fields in the admin
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        verbose_name="Logo",
+        help_text="Format préconisé : png en 128px par 128px",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    banner = models.ForeignKey(
+        "wagtailimages.Image",
+        verbose_name="Bannière",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
     body = StreamField(
         [
             ("paragraph", blocks.RichTextBlock(label="Texte avec mise en forme")),
@@ -54,6 +72,8 @@ class ServicePage(Page):
 
     # Editor panels configuration
     content_panels = Page.content_panels + [
+        FieldPanel("logo"),
+        FieldPanel("banner"),
         FieldPanel("body"),
     ]
 

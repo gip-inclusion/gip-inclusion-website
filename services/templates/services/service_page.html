@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags wagtailimages_tags markdownify %}
+{% load static wagtailcore_tags wagtailimages_tags markdownify %}
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
 {% endblock title %}
@@ -9,14 +9,20 @@
     {% endblock description %}
 {% endif %}
 {% block content %}
-    {% include "cms/breadcrumb.html" %}
-
-    <div class="fr-container fr-pb-6w">
-        <div class="fr-grid-row fr-grid-row--gutters">
-            <div class="fr-col-12">
-                {% include "services/includes/phase_badge.html" with beta_last_phase=page.beta_last_phase %}
-                <h1 class="fr-mt-1w">{{ page.beta_name }}</h1>
-                <p class="fr-my-2w">{{ page.beta_pitch }}</p>
+    {% if page.banner %}
+        {% image page.banner original as bg_img %}
+        {% firstof bg_img.url as banner_url %}
+    {% else %}
+        {% static 'images/service-missing-banner.png' as banner_url %}
+    {% endif %}
+    <div style="background: url({{ banner_url }}) no-repeat center">
+        {% include "cms/breadcrumb.html" %}
+        <div class="fr-container fr-pb-0w">
+            <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-12">
+                    <h1 class="fr-mt-1w">{{ page.beta_name }}</h1>
+                    <p class="fr-mt-2w">{{ page.beta_pitch }}</p>
+                </div>
             </div>
         </div>
     </div>
