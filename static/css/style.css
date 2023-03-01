@@ -1,2 +1,12 @@
+#menu-services {
+  position: absolute;
+  background: var(--background-default-grey);
+  text-align: left;
+  padding: 4em 2em 2em 2em; }
+  #menu-services li {
+    padding-top: 2em; }
+    #menu-services li img {
+      vertical-align: middle;
+      margin-right: 1em; }
 
 /*# sourceMappingURL=style.css.map */
