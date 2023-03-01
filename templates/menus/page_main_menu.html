@@ -1,10 +1,20 @@
-{% load menu_tags %}
+{% load menu_tags services_tags wagtailcore_tags %}
 <ul>
     {% for item in menu_items %}
     <li>
         {% if item.has_children_in_menu %}
             {{ item.text }}
             {% sub_menu item template="menus/page_sub_menu.html" %}
+        {% elif item.href == "/nos-services/" %}
+            {{ item.text }}
+            <ul>
+                {% services as active_services %}
+                {% for service in active_services %}
+                    <li>
+                        <a href="{% pageurl service %}" target="_self">{{ service.beta_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         {% else %}
             <a href="{{ item.href }}" target="_self">{{ item.text }}</a>
         {% endif %}

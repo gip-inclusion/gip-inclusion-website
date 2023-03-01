@@ -56,3 +56,7 @@ class ServicePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("body"),
     ]
+
+    @staticmethod
+    def get_active_services():
+        return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI)
