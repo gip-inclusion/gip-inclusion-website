@@ -14,7 +14,7 @@
     </a>
 {% endblock brand %}
 {% block service_title %}
-    <img src="{% static 'images/logo-plateforme-inclusion.svg' %}"
+    <img src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}"
          alt="La Plateforme de l'inclusion"
          class="logo"/>
 {% endblock service_title %}
@@ -33,7 +33,7 @@
             {% services as active_services %}
             {% for service in active_services %}
                 <li>
-                    <a href="{% pageurl service %}">{% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}</a>
+                    <a class="fr-nav__link" href="{% pageurl service %}">{% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}</a>
                 </li>
             {% endfor %}
         </ul>
