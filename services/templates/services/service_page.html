@@ -26,24 +26,22 @@
             </div>
         </div>
     </div>
-    <div style="background: #f5f5fe;">
-        <div class="fr-container">
-            <div class="fr-grid-row fr-grid-row--gutters">
-                <div class="fr-col-12 fr-col-md-6 fr-py-3w">
-                    <h2 class="fr-my-3w">Le problème</h2>
-                    <p class="fr-pr-8w">{{ page.beta_problem|markdownify|linebreaksbr }}</p>
-                </div>
-                <div class="fr-col-12 fr-col-md-6 fr-py-3w">
-                    <h2 class="fr-my-3w">Notre service</h2>
-                    <p class="fr-pr-8w">{{ page.beta_service|markdownify|linebreaksbr }}</p>
-                    {% if page.beta_link %}
-                        <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
-                        href="{{ page.beta_link }}"
-                        target="_blank"
-                        rel="noopener"
-                        class="fr-link">Accéder à {{ page.beta_name }}</a>
-                    {% endif %}
-                </div>
+    <div class="fr-container">
+        <div class="fr-grid-row fr-grid-row--gutters">
+            <div class="fr-col-12 fr-col-md-6 fr-py-3w">
+                <h2 class="fr-my-3w">Le problème</h2>
+                <p class="fr-pr-8w">{{ page.beta_problem|markdownify|linebreaksbr }}</p>
+            </div>
+            <div class="fr-col-12 fr-col-md-6 fr-py-3w">
+                <h2 class="fr-my-3w">Notre service</h2>
+                <p class="fr-pr-8w">{{ page.beta_service|markdownify|linebreaksbr }}</p>
+                {% if page.beta_link %}
+                    <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
+                    href="{{ page.beta_link }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="fr-link">Accéder à {{ page.beta_name }}</a>
+                {% endif %}
             </div>
         </div>
     </div>
