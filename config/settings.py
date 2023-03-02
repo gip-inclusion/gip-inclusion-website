@@ -98,6 +98,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "dsfr.context_processors.site_config",
                 "wagtailmenus.context_processors.wagtailmenus",
+                "config.settings_context_processors.expose_settings",
             ],
         },
     },
@@ -225,3 +226,8 @@ WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
     ("header_tools", "Menu en haut à droite"),
     ("footer", "Menu en pied de page"),
 )
+
+# MATOMO
+# ---------------------------------------
+MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
+MATOMO_URL = os.getenv("MATOMO_URL")
