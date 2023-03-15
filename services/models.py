@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.functions import Lower
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
@@ -79,4 +80,6 @@ class ServicePage(Page):
 
     @staticmethod
     def get_active_services():
-        return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI)
+        return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI).order_by(
+            Lower("beta_name")
+        )

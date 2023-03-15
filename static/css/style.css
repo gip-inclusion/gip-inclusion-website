@@ -1,14 +1,24 @@
 #menu-services {
   position: absolute;
-  background: var(--background-default-grey);
   text-align: left;
-  padding: 4em 1em 1em 1em; }
+  padding: 3em 1em 1em 1em; }
+  #menu-services .menu-services-container {
+    background: var(--background-default-grey);
+    filter: drop-shadow(var(--raised-shadow)); }
   #menu-services li a {
-    padding: 1em 1em; }
+    padding: 1em 2em; }
     #menu-services li a img {
       vertical-align: middle;
       margin-right: 1em; }
   #menu-services p {
-    padding: 0 1em; }
+    padding: 1em 2em; }
+
+.service_banner {
+  background-repeat: no-repeat;
+  background-position: right top; }
+
+@media (max-width: 64em) {
+  .service_banner {
+    background-size: 0; } }
 
 /*# sourceMappingURL=style.css.map */

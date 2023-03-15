@@ -15,11 +15,11 @@
     {% else %}
         {% static 'images/service-missing-banner.png' as banner_url %}
     {% endif %}
-    <div style="background: url({{ banner_url }}) no-repeat right">
+    <div class="service_banner" style="background-image: url({{ banner_url }});">
         {% include "cms/breadcrumb.html" %}
         <div class="fr-container fr-pb-0w">
             <div class="fr-grid-row fr-grid-row--gutters">
-                <div class="fr-col-12">
+                <div class="fr-col-12 fr-col-lg-6 fr-col-xl-9">
                     <h1 class="fr-mt-0w fr-mb-1w">{{ page.beta_name }}</h1>
                     <p class="fr-mb-7w">{{ page.beta_pitch }}</p>
                 </div>
