@@ -33,7 +33,9 @@
             {% services as active_services %}
             {% for service in active_services %}
                 <li>
-                    <a class="fr-nav__link" href="{% pageurl service %}">{% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}</a>
+                    <a class="fr-nav__link" {% if service.beta_link %}href="{{ service.beta_link }}" target="_blank"{% else %}href="{% pageurl service %}"{% endif %}>
+                        {% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>
