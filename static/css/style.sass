@@ -1,16 +1,19 @@
 
 #menu-services
     position: absolute
-    background: var(--background-default-grey)
     text-align: left
+    padding: 3em 1em 1em 1em
 
-    padding: 4em 1em 1em 1em 
+    & .menu-services-container
+        background: var(--background-default-grey)
+        filter: drop-shadow(var(--raised-shadow))
 
     & li
         & a
-            padding: 1em 1em    
+            padding: 1em 2em    
             & img
                 vertical-align: middle
                 margin-right: 1em
+
     & p
-        padding: 0 1em
+        padding: 1em 2em
