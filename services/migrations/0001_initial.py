@@ -35,9 +35,7 @@ class Migration(migrations.Migration):
                 ("beta_pitch", models.CharField(max_length=255, verbose_name="Pitch")),
                 (
                     "beta_link",
-                    models.URLField(
-                        blank=True, max_length=255, verbose_name="Lien vers le service"
-                    ),
+                    models.URLField(blank=True, max_length=255, verbose_name="Lien vers le service"),
                 ),
                 (
                     "beta_problem",

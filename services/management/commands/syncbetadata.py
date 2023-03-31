@@ -20,20 +20,13 @@ class Command(BaseCommand):
         data_json = resp.json()
         services_count = 0
         for data in data_json["data"]:
-            incubator = (
-                data.get("relationships", {})
-                .get("incubator", {})
-                .get("data", {})
-                .get("id", None)
-            )
+            incubator = data.get("relationships", {}).get("incubator", {}).get("data", {}).get("id", None)
             if incubator == "gip-inclusion":
                 self.stdout.write("*" * 80)
                 self.stdout.write(f"Getting ''{data['attributes']['name']}'' service..")
 
                 link = data["attributes"].get("link", "")
-                markdown_content = urllib.parse.unquote(
-                    data["attributes"]["content_url_encoded_markdown"]
-                )
+                markdown_content = urllib.parse.unquote(data["attributes"]["content_url_encoded_markdown"])
                 service = self.get_markdown_section("Notre service", markdown_content)
                 problem = self.get_markdown_section("Le problème", markdown_content)
                 phases = data["attributes"].get("phases", [{"name": ""}])
@@ -50,15 +43,11 @@ class Command(BaseCommand):
                 services_count += 1
         # TODO: Delete services that no longer exist
         self.stdout.write("-" * 80)
-        self.stdout.write(
-            f"Getting data completed with {services_count} services synchronized"
-        )
+        self.stdout.write(f"Getting data completed with {services_count} services synchronized")
 
     @staticmethod
     def get_markdown_section(section_title, markdown_content):
-        m = re.search(
-            r"(?<!#)## " + section_title + r"(?s)(?:(?!(?<!#)#).)+", markdown_content
-        )
+        m = re.search(r"(?<!#)## " + section_title + r"(?s)(?:(?!(?<!#)#).)+", markdown_content)
         if m:
             return m.group(0).replace(f"## {section_title}\n\n", "")
         return ""

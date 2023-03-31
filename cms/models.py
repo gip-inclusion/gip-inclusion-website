@@ -9,6 +9,11 @@ from wagtail.search import index
 
 
 # Wagtail Block Documentation : https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html
+class WithSpacingBlock(blocks.StructBlock):
+    top_margin = blocks.IntegerBlock(label="Espacement au dessus", min_value=0, max_value=15, default=3)
+    bottom_margin = blocks.IntegerBlock(label="Espacement en dessous", min_value=0, max_value=15, default=3)
+
+
 class HeroBlock(blocks.StructBlock):
     bg_image = ImageChooserBlock(label="Image d'arrière plan")
     bg_color = blocks.CharBlock(
@@ -36,9 +41,7 @@ class TitleBlock(blocks.StructBlock):
 class ImageBlock(blocks.StructBlock):
     title = blocks.CharBlock(label="Titre", required=False)
     image = ImageChooserBlock(label="Illustration")
-    alt = blocks.CharBlock(
-        label="Texte alternatif (description textuelle de l'image)", required=False
-    )
+    alt = blocks.CharBlock(label="Texte alternatif (description textuelle de l'image)", required=False)
     caption = blocks.RichTextBlock(label="Légende", required=False)
     url = blocks.URLBlock(label="Lien", required=False)
 
@@ -132,17 +135,13 @@ class CardBlock(blocks.StructBlock):
     )
 
     badge_text = blocks.CharBlock(label="Texte du badge", required=False)
-    badge_level = blocks.ChoiceBlock(
-        label="Type de badge", choices=badge_level_choices, required=False
-    )
+    badge_level = blocks.ChoiceBlock(label="Type de badge", choices=badge_level_choices, required=False)
     badge_icon = blocks.BooleanBlock(label="Masquer l'icon du badge", required=False)
 
 
 class BadgeBlock(blocks.StructBlock):
     text = blocks.CharBlock(label="Texte du badge", required=False)
-    color = blocks.ChoiceBlock(
-        label="Couleur de badge", choices=badge_level_choices, required=False
-    )
+    color = blocks.ChoiceBlock(label="Couleur de badge", choices=badge_level_choices, required=False)
     hide_icon = blocks.BooleanBlock(label="Masquer l'icon du badge", required=False)
 
 
@@ -158,14 +157,12 @@ class MultiColumnsBlock(blocks.StreamBlock):
     quote = QuoteBlock(label="Citation")
 
 
-class MultiColumnsWithTitleBlock(blocks.StructBlock):
+class MultiColumnsWithTitleBlock(WithSpacingBlock):
     bg_image = ImageChooserBlock(label="Image d'arrière plan", required=False)
     bg_color = blocks.RegexBlock(
         label="Couleur d'arrière plan au format hexa (Ex: #f5f5fe)",
         regex=r"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-        error_messages={
-            "invalid": "La couleur n'est pas correcte, le format doit être #fff ou #f5f5fe"
-        },
+        error_messages={"invalid": "La couleur n'est pas correcte, le format doit être #fff ou #f5f5fe"},
         required=False,
     )
     title = blocks.CharBlock(label="Titre", required=False)
@@ -198,13 +195,8 @@ class StepperBlock(blocks.StructBlock):
     steps = StepsListBlock(label="Les étapes")
 
 
-class SeparatorBlock(blocks.StructBlock):
-    top_margin = blocks.IntegerBlock(
-        label="Espacement au dessus", min_value=0, max_value=15, default=3
-    )
-    bottom_margin = blocks.IntegerBlock(
-        label="Espacement en dessous", min_value=0, max_value=15, default=3
-    )
+class SeparatorBlock(WithSpacingBlock):
+    pass
 
 
 class ContentPage(Page):
@@ -236,9 +228,7 @@ class ContentPage(Page):
             ("separator", SeparatorBlock(label="Séparateur")),
             (
                 "contact",
-                blocks.StaticBlock(
-                    label="Nous contacter", template="cms/blocks/contact.html"
-                ),
+                blocks.StaticBlock(label="Nous contacter", template="cms/blocks/contact.html"),
             ),
         ],
         blank=True,

@@ -15,7 +15,8 @@
     {% else %}
         {% static 'images/service-missing-banner.png' as banner_url %}
     {% endif %}
-    <div class="service_banner" style="background-image: url({{ banner_url }});">
+    <div class="service_banner"
+         style="background-image: url({{ banner_url }})">
         {% include "cms/breadcrumb.html" %}
         <div class="fr-container fr-pb-0w">
             <div class="fr-grid-row fr-grid-row--gutters">
@@ -37,10 +38,10 @@
                 <p class="fr-pr-8w">{{ page.beta_service|markdownify|linebreaksbr }}</p>
                 {% if page.beta_link %}
                     <a title="Accéder à {{ page.beta_name }} - ouvre une nouvelle fenêtre"
-                    href="{{ page.beta_link }}"
-                    target="_blank"
-                    rel="noopener"
-                    class="fr-link">Accéder à {{ page.beta_name }}</a>
+                       href="{{ page.beta_link }}"
+                       target="_blank"
+                       rel="noopener"
+                       class="fr-link">Accéder à {{ page.beta_name }}</a>
                 {% endif %}
             </div>
         </div>

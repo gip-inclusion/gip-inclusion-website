@@ -2,40 +2,37 @@
 {% load static wagtailcore_tags wagtailimages_tags menu_tags services_tags %}
 {% block brand %}
     <a href="/" title="Accueil — {{ SITE_CONFIG.site_title }}">
-        <p class="fr-logo">
-            Minitère
-            <br />
-            du travail,
-            <br />
-            du plein emploi
-            <br />
-            et de l'insertion
-        </p>
+        <img src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}"
+             alt="La Plateforme de l'inclusion"
+             class="logo"/>
     </a>
 {% endblock brand %}
 {% block service_title %}
-    <img src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}"
-         alt="La Plateforme de l'inclusion"
-         class="logo"/>
 {% endblock service_title %}
 {% block service_tagline %}
 {% endblock service_tagline %}
 {% block header_tools %}
-    <div class="fr-header__tools-links">
-        {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html"  %}
-    </div>
+    <div class="fr-header__tools-links">{% flat_menu handle="header_tools" template="menus/custom_flat_menu.html"  %}</div>
     <button class="fr-btn" aria-expanded="false" aria-controls="menu-services">
         <img src="{% static 'images/services-ico.svg' %}" alt="" />
     </button>
     <div class="fr-collapse" id="menu-services">
         <div class="menu-services-container">
-            <p><strong>Nos services numériques</strong></p>
+            <p>
+                <strong>Nos services numériques</strong>
+            </p>
             <ul>
                 {% services as active_services %}
                 {% for service in active_services %}
                     <li>
-                        <a class="fr-nav__link" {% if service.beta_link %}href="{{ service.beta_link }}" target="_blank"{% else %}href="{% pageurl service %}"{% endif %}>
-                            {% if service.logo %}{% image service.logo fill-20x20 alt="" %}{% else %}<img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />{% endif %} {{ service.beta_name }}
+                        <a class="fr-nav__link"
+                           {% if service.beta_link %}href="{{ service.beta_link }}" target="_blank"{% else %}href="{% pageurl service %}"{% endif %}>
+                            {% if service.logo %}
+                                {% image service.logo fill-20x20 alt="" %}
+                            {% else %}
+                                <img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />
+                            {% endif %}
+                            {{ service.beta_name }}
                         </a>
                     </li>
                 {% endfor %}
