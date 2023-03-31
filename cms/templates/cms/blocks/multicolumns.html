@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% image block.value.bg_image original as bg_img %}
-<div class="fr-py-5w fr-my-5w"
+<div class="{% if bg_img or block.value.bg_color %}fr-py-5w{% endif %}fr-mt-{{ block.value.top_margin }}w fr-mb-{{ block.value.bottom_margin }}w"
      {% if bg_img %} style="background: url({{ bg_img.url }}) {{ block.value.bg_color }} no-repeat center" {% elif block.value.bg_color %} style="background: {{ block.value.bg_color }}" {% endif %}>
     <div class="fr-container">
         {% if block.value.title %}
