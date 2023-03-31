@@ -80,6 +80,4 @@ class ServicePage(Page):
 
     @staticmethod
     def get_active_services():
-        return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI).order_by(
-            Lower("beta_name")
-        )
+        return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI).order_by(Lower("beta_name"))

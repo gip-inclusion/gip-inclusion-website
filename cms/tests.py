@@ -41,9 +41,7 @@ class CMSPageTest(TestCase):
     def test_meta_description_tag_when_search_description_is_not_set(self):
         page = ContentPageFactory()
         response = self.client.get(f"/{ page.slug }/")
-        self.assertContains(
-            response, '<meta name="description" content="" />', count=1, html=True
-        )
+        self.assertContains(response, '<meta name="description" content="" />', count=1, html=True)
 
 
 class TestPlanDuSite(TestCase):

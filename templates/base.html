@@ -18,9 +18,13 @@
                   rel="stylesheet"
                   type="text/css"/>
         {% endblock extra_css %}
-        <link rel="apple-touch-icon" href="{% static 'images/favicon.png'%}"/>
-        <link rel="icon" href="{% static 'images/favicon.svg'%}" type="image/svg+xml"/>
-        <link rel="shortcut icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon"/>
+        <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}"/>
+        <link rel="icon"
+              href="{% static 'images/favicon.svg' %}"
+              type="image/svg+xml"/>
+        <link rel="shortcut icon"
+              href="{% static 'images/favicon.ico' %}"
+              type="image/x-icon"/>
         <meta name="theme-color" content="#ffffff"/>
         {% block title %}
             <title>
@@ -52,7 +56,6 @@
             {% endblock content %}
         </main>
         {% include "blocks/footer.html" %}
-
         {% if MATOMO_SITE_ID and MATOMO_URL %}
             <!-- Matomo -->
             <script>
@@ -67,7 +70,7 @@
                 g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
                 })();
             </script>
-            <!-- End Matomo Code -->  
+            <!-- End Matomo Code -->
         {% endif %}
         {% dsfr_js %}
         {% block extra_js %}
