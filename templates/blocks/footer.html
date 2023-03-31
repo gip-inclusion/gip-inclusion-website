@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags menu_tags %}
+{% load static wagtailcore_tags menu_tags services_tags %}
 <div class="fr-follow">
     <div class="fr-container">
         <div class="fr-grid-row">
@@ -49,6 +49,46 @@
     </div>
 </div>
 <footer class="fr-footer" id="footer">
+    <div class="fr-footer__top">
+        <div class="fr-container">
+            <div class="fr-grid-row fr-grid-row--start fr-grid-row--gutters">
+                <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
+                    <h3 class="fr-footer__top-cat">Pages internes</h3>
+                    {% main_menu template="menus/footer_menu.html" %}
+                </div>
+                <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
+                    <h3 class="fr-footer__top-cat">Liens externes</h3>
+                    {% flat_menu handle="header_tools" template="menus/footer_menu.html"  %}
+                </div>
+                <div class="fr-col-12 fr-col-sm-6 fr-col-md-8">
+                    <div class="fr-grid-row">
+                        <div class="fr-col-12 fr-col-md-4">
+                            <h3 class="fr-footer__top-cat">Nos services numériques</h3>
+                        </div>
+                    </div>
+                    <div class="fr-grid-row">
+                        <div class="fr-col-12 fr-col-md-3">
+                            <ul class="fr-footer__top-list">
+                                {% services as active_services %}
+                                {% for service in active_services %}
+                                    <li>
+                                        <a class="fr-footer__top-link" href="{% pageurl service %}">{{ service.beta_name }}</a>
+                                    </li>
+                                    {# create new col every 5 items #}
+                                    {% if not forloop.last and forloop.counter|divisibleby:5  %}
+                                    </ul>
+                                </div>
+                                <div class="fr-col-12 fr-col-md-3">
+                                    <ul class="fr-footer__top-list">
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="fr-container">
         <div class="fr-footer__body">
             <div class="fr-footer__brand fr-enlarge-link">
