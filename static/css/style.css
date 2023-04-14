@@ -17,6 +17,13 @@
   background-repeat: no-repeat;
   background-position: right top; }
 
+.fr-card__img img.avatar-rounded {
+  border-radius: 50%;
+  width: 100%;
+  margin: auto;
+  max-width: 50%;
+  aspect-ratio: auto; }
+
 @media (max-width: 64em) {
   .service_banner {
     background-size: 0; } }
