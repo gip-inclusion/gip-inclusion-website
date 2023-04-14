@@ -35,7 +35,10 @@ class ServiceTest(TestCase):
             stderr=err,
         )
 
-        self.assertIn("services synchronized", out.getvalue())
+        self.assertRegex(
+            out.getvalue(),
+            r"\d+ services and \d+ members synchronized",
+        )
         self.assertEqual(err.getvalue(), "")
 
         # List page works
