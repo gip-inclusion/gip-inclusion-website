@@ -20,7 +20,7 @@ from services.enums import Phase
 
 
 class ServicePage(Page):
-    beta_id = models.CharField("ID beta", max_length=255)
+    beta_id = models.CharField("ID beta", max_length=255, unique=True)
     beta_name = models.CharField("Nom du service", max_length=255)
     beta_pitch = models.CharField("Pitch", max_length=255)
     beta_link = models.URLField("Lien vers le service", max_length=255, blank=True)
@@ -81,3 +81,12 @@ class ServicePage(Page):
     @staticmethod
     def get_active_services():
         return ServicePage.objects.exclude(beta_last_phase=Phase.ALUMNI).order_by(Lower("beta_name"))
+
+
+class Member(models.Model):
+    beta_id = models.CharField("ID beta", max_length=255, unique=True)
+    beta_fullname = models.CharField("Prénom et nom", max_length=255)
+    beta_role = models.CharField("Poste", max_length=255)
+    beta_domaine = models.CharField("Domaine", max_length=255)
+    beta_github = models.CharField("Github", max_length=255)
+    services = models.ManyToManyField(ServicePage, blank=True)
