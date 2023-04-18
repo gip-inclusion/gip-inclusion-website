@@ -225,6 +225,19 @@ WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
     ("footer", "Menu en pied de page"),
 )
 
+WAGTAILEMBEDS_FINDERS = [
+    {
+        "class": "cms.embeds_finders.GristFinder",
+    },
+    # Handles all other oEmbed providers the default way
+    {
+        "class": "wagtail.embeds.finders.oembed",
+    },
+]
+
+# Height for custom Grist Embed
+WAGTAILEMBEDS_GRIST_HEIGHT = 400
+
 # MATOMO
 # ---------------------------------------
 MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
