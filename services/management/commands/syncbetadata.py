@@ -1,7 +1,7 @@
 import re
 import urllib.parse
 
-import requests
+import httpx
 from django.core.management.base import BaseCommand, CommandError
 
 from cms.models import ContentPage
@@ -32,7 +32,7 @@ class Command(BaseCommand):
         # TODO: Delete services that no longer exist
         self.stdout.write("Fetch services data")
         self.gip_startups = []
-        resp = requests.get(BETA_GOUV_STARTUPS_ENDPOINT)
+        resp = httpx.get(BETA_GOUV_STARTUPS_ENDPOINT)
         data_json = resp.json()
         for data in data_json["data"]:
             incubator = data.get("relationships", {}).get("incubator", {}).get("data", {}).get("id", None)
@@ -59,7 +59,7 @@ class Command(BaseCommand):
 
     def fetch_active_member_on_startup(self):
         self.active_members = {}
-        resp = requests.get(BETA_GOUV_STARTUPS_DETAILS_ENDPOINT)
+        resp = httpx.get(BETA_GOUV_STARTUPS_DETAILS_ENDPOINT)
         data_json = resp.json()
         for startup in self.gip_startups:
             # fetch active members on this startup
@@ -73,7 +73,7 @@ class Command(BaseCommand):
     def sync_members(self):
         self.stdout.write("Fetch members data")
         self.members = []
-        resp = requests.get(BETA_GOUV_MEMBERS_ENDPOINT)
+        resp = httpx.get(BETA_GOUV_MEMBERS_ENDPOINT)
         data_json = resp.json()
         for member in data_json:
             # This member actually works for the GIP
