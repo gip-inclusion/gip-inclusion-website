@@ -1,7 +1,7 @@
-import re
 import urllib.parse
 
 import httpx
+import regex
 from django.core.management.base import BaseCommand, CommandError
 
 from cms.models import ContentPage
@@ -93,7 +93,7 @@ class Command(BaseCommand):
 
     @staticmethod
     def get_markdown_section(section_title, markdown_content):
-        m = re.search(r"(?<!#)## " + section_title + r"(?s)(?:(?!(?<!#)#).)+", markdown_content)
+        m = regex.search(r"(?<!#)## " + section_title + r"(?s)(?:(?!(?<!#)#).)+", markdown_content)
         if m:
             return m.group(0).replace(f"## {section_title}\n\n", "")
         return ""
