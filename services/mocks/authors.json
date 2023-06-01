@@ -1,0 +1,913 @@
+[
+    {
+        "id": "agathe.latreille",
+        "fullname": "Agathe Latreille",
+        "role": "Product Manager",
+        "domaine": "Intraprenariat",
+        "github": "Agathe-SW",
+        "missions": [
+            {
+                "start": "2016-11-01",
+                "end": "2019-12-26",
+                "status": "admin",
+                "employer": "pole-emploi"
+            },
+            {
+                "start": "2020-01-01",
+                "end": "2025-12-01",
+                "status": "independent",
+                "employer": "Octo "
+            }
+        ],
+        "startups": [
+            "dora",
+            "data-inclusion"
+        ],
+        "previously": [
+            "itou",
+            "la-bonne-alternance",
+            "la-bonne-boite"
+        ]
+    }
+    ,
+    {
+        "id": "aurelie.marre",
+        "fullname": "Aur\u00e9lie Marre",
+        "role": "Product Owner",
+        "domaine": "Autre",
+        "missions": [
+            {
+                "start": "2022-02-14",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": ""
+            }
+        ],
+        "startups": [
+            "pilotage.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "cecile.di.marco",
+        "fullname": "C\u00e9cile Di Marco",
+        "role": "Appui Support",
+        "domaine": "Autre",
+        "missions": [
+            {
+                "start": "2023-01-01",
+                "end": "2023-07-30",
+                "status": "admin",
+                "employer": "p\u00f4le emploi"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "clement.duport",
+        "fullname": "cl\u00e9ment Duport",
+        "role": "D\u00e9veloppeur",
+        "domaine": "D\u00e9veloppement",
+        "github": "clement-duport",
+        "missions": [
+            {
+                "start": "2022-12-01",
+                "end": "2025-11-30",
+                "status": "admin",
+                "employer": "GIP Plateforme de l\u2019inclusion"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "colin.maudry",
+        "fullname": "Colin Maudry",
+        "role": "Ing\u00e9nieur des donn\u00e9es",
+        "domaine": "D\u00e9veloppement",
+        "github": "colinmaudry",
+        "missions": [
+            {
+                "start": "2023-01-04",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "data-inclusion"
+        ]
+    }
+    ,
+    {
+        "id": "elodie.delaisement",
+        "fullname": "Elodie Delaisement",
+        "role": "Product Designer",
+        "domaine": "Design",
+        "missions": [
+            {
+                "start": "2023-02-06",
+                "end": "2023-07-31",
+                "status": "independent",
+                "employer": "GIP PLATEFORME DE L'INCLUSION"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "enguerran.weiss",
+        "fullname": "Enguerran Weiss",
+        "role": "D\u00e9veloppeur front-end",
+        "domaine": "D\u00e9veloppement",
+        "github": "enguerranws",
+        "missions": [
+            {
+                "start": "2022-02-14",
+                "end": "2023-12-31",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "herve.lallemand",
+        "fullname": "Herv\u00e9 LALLEMAND",
+        "role": "Intrapreneur",
+        "domaine": "Intraprenariat",
+        "missions": [
+            {
+                "start": "2021-07-09",
+                "end": "2023-07-31",
+                "status": "admin",
+                "employer": "P\u00f4le emploi"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "jerome.burkard",
+        "fullname": "J\u00e9r\u00f4me Burkard",
+        "role": "D\u00e9veloppeur",
+        "domaine": "D\u00e9veloppement",
+        "github": "jeromebu",
+        "missions": [
+            {
+                "start": "2021-07-16",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "La fabrique p\u00f4le emploi"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "jessica.celeste",
+        "fullname": "Jessica CELESTE",
+        "role": "Charg\u00e9e de d\u00e9ploiement",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2022-05-02",
+                "end": "2025-12-31",
+                "status": "admin",
+                "employer": ""
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "joffrey.mougel",
+        "fullname": "Joffrey Mougel",
+        "role": "UX Researcher &amp; Designer",
+        "domaine": "Design",
+        "github": "joffreymougel",
+        "missions": [
+            {
+                "start": "2021-03-17",
+                "end": "2023-12-31",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "pilotage.de.linclusion",
+            "itou"
+        ]
+    }
+    ,
+    {
+        "id": "julie.landes",
+        "fullname": "Julie Land\u00e8s",
+        "role": "Responsable Communication",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2020-03-23",
+                "end": "2021-11-30",
+                "status": "independent",
+                "employer": ""
+            },
+            {
+                "start": "2021-11-30",
+                "end": "2023-12-31",
+                "status": "independent",
+                "employer": ""
+            }
+        ],
+        "startups": [
+            "itou",
+            "la.communaute.de.linclusion",
+            "pilotage.de.linclusion",
+            "place-de-marche-inclusion"
+        ]
+    }
+    ,
+    {
+        "id": "karel.cloarec",
+        "fullname": "Karel Cloarec",
+        "role": "Coaching - Deploiement",
+        "domaine": "Coaching",
+        "github": "Karel2",
+        "missions": [
+            {
+                "start": "2019-05-02",
+                "end": "2020-05-13",
+                "status": "independent",
+                "employer": "Codeurs en Libert\u00e9"
+            },
+            {
+                "start": "2020-05-14",
+                "end": "2020-10-30",
+                "status": "independent",
+                "employer": "Octo"
+            },
+            {
+                "start": "2020-11-01",
+                "end": "2021-04-01",
+                "status": "independent",
+                "employer": "Scopyleft"
+            },
+            {
+                "start": "2021-04-01",
+                "end": "2021-11-01",
+                "status": "independent",
+                "employer": "UT7"
+            },
+            {
+                "start": "2021-11-01",
+                "end": "2022-01-02",
+                "status": "independent",
+                "employer": "NUMA"
+            },
+            {
+                "start": "2021-02-03",
+                "end": "2023-12-01",
+                "status": "independent",
+                "employer": "LBC"
+            }
+        ],
+        "startups": [
+            "deveco",
+            "guichet-entreprises-nc",
+            "monstage",
+            "la.communaute.de.linclusion"
+        ],
+        "previously": [
+            "andi",
+            "urbanvitaliz",
+            "candela",
+            "eva",
+            "anct-pni-14",
+            "anct-pni-40",
+            "ethique.en.sante.numerique",
+            "conventionnement.iae",
+            "rdv.mjd",
+            "frise.cpip",
+            "chantiers.agiles"
+        ]
+    }
+    ,
+    {
+        "id": "laurine.huber",
+        "fullname": "Laurine Huber",
+        "role": "Data Analyst",
+        "domaine": "D\u00e9veloppement",
+        "github": "laurinehu",
+        "missions": [
+            {
+                "start": "2022-08-01",
+                "end": "2023-08-01",
+                "status": "independent",
+                "employer": "Octo"
+            },
+            {
+                "start": "2022-11-01",
+                "end": "2025-10-31",
+                "status": "admin",
+                "employer": "gip-inclusion"
+            }
+        ],
+        "startups": [
+            "pilotage.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "louise.marti",
+        "fullname": "Louise MARTI",
+        "role": "Bizdev pour la Plateforme de l&#39;inclusion",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2021-09-01",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "la.communaute.de.linclusion",
+            "itou"
+        ]
+    }
+    ,
+    {
+        "id": "lucas.pastel",
+        "fullname": "Lucas PASTEL",
+        "role": "Charg\u00e9 de communication",
+        "domaine": "Autre",
+        "missions": [
+            {
+                "start": "2022-05-20",
+                "end": "2023-12-31",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "la.communaute.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "manon.silva",
+        "fullname": "Manon SILVA",
+        "role": "BizDev",
+        "domaine": "Animation",
+        "missions": [
+            {
+                "start": "2022-10-24",
+                "end": "2023-07-02",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "maison.de.lautisme"
+        ]
+    }
+    ,
+    {
+        "id": "nadege.vaugrenard",
+        "fullname": "Nad\u00e8ge VAUGRENARD",
+        "role": "Biz Dev",
+        "domaine": "Produit",
+        "missions": [
+            {
+                "start": "2022-09-01",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "la.communaute.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "nastassia.rodriguez",
+        "fullname": "Nastassia Rodriguez",
+        "role": "charg\u00e9e de d\u00e9ploiement",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2022-04-01",
+                "end": "2025-12-01",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "nathalie.reyre",
+        "fullname": "Nathalie Reyre",
+        "role": "Product Owner",
+        "domaine": "Produit",
+        "github": "nathalie-reyre",
+        "missions": [
+            {
+                "start": "2015-12-01",
+                "end": "2019-08-30",
+                "status": "service",
+                "employer": "P\u00f4le emploi"
+            },
+            {
+                "start": "2019-09-11",
+                "end": "2020-05-13",
+                "status": "independent",
+                "employer": "Codeurs en libert\u00e9"
+            },
+            {
+                "start": "2019-05-01",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "diagoriente",
+            "l-immersion-facile"
+        ],
+        "previously": [
+            "la-bonne-formation",
+            "andi",
+            "snu"
+        ]
+    }
+    ,
+    {
+        "id": "nicolas.enjalbert",
+        "fullname": "Nicolas Enjalbert",
+        "role": "Coach produit, entrepreneur associ\u00e9",
+        "domaine": "Coaching",
+        "github": "nenj",
+        "missions": [
+            {
+                "start": "2021-04-08",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Benext, NUMA"
+            }
+        ],
+        "startups": [
+            "envergo",
+            "l-application-du-cej",
+            "inclusion.connect",
+            "data-inclusion"
+        ]
+    }
+    ,
+    {
+        "id": "pierre.putois",
+        "fullname": "Pierre  Putois",
+        "role": "bizdev",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2022-09-18",
+                "end": "2025-12-01",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "raphael.pierquin",
+        "fullname": "Rapha\u00ebl Pierquin",
+        "role": "Coach et accoucheur de papillons",
+        "domaine": "Coaching",
+        "github": "raphaelpierquin",
+        "missions": [
+            {
+                "start": "2018-03-13",
+                "end": "2023-12-31",
+                "status": "service",
+                "employer": "ut7"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile",
+            "sppnaut",
+            "donn\u00e9es-et-territoires"
+        ],
+        "previously": [
+            "zam",
+            "maraudes",
+            "visam",
+            "culture_amateurs",
+            "dumas"
+        ]
+    }
+    ,
+    {
+        "id": "romain.cambonie",
+        "fullname": "Romain Cambonie",
+        "role": "D\u00e9veloppeur",
+        "domaine": "D\u00e9veloppement",
+        "github": "romain-cambonie",
+        "missions": [
+            {
+                "start": "2021-11-02",
+                "end": "2022-01-31",
+                "status": "independent",
+                "employer": "Octo"
+            },
+            {
+                "start": "2022-02-01",
+                "end": "2022-12-31",
+                "status": "independent",
+                "employer": "Benext"
+            },
+            {
+                "start": "2023-01-02",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ],
+        "previously": [
+            "conseiller-numerique"
+        ]
+    }
+    ,
+    {
+        "id": "sabrina.benmohamed",
+        "fullname": "Sabrina Benmohamed",
+        "role": "Charg\u00e9e de d\u00e9ploiement",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2023-05-02",
+                "end": "2023-09-03",
+                "status": "independent",
+                "employer": "Dinum"
+            }
+        ],
+        "startups": [
+            "pilotage.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "sebastien.hoffmann",
+        "fullname": "S\u00e9bastien Hoffmann",
+        "role": "UI Designer",
+        "domaine": "Design",
+        "github": "lespetitssuisses",
+        "missions": [
+            {
+                "start": "2021-07-16",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": ""
+            }
+        ],
+        "startups": [
+            "l-immersion-facile"
+        ]
+    }
+    ,
+    {
+        "id": "sophie.garcia",
+        "fullname": "Sophie Garcia",
+        "role": "Charg\u00e9e de d\u00e9ploiement",
+        "domaine": "D\u00e9ploiement",
+        "missions": [
+            {
+                "start": "2020-09-01",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": ""
+            }
+        ],
+        "startups": [
+            "itou",
+            "la.communaute.de.linclusion",
+            "dora"
+        ],
+        "previously": [
+            "place-de-marche-inclusion"
+        ]
+    }
+    ,
+    {
+        "id": "thomas.guillet",
+        "fullname": "Thomas Guillet",
+        "role": "Co-animateur transverse et ind\u00e9pendant",
+        "domaine": "Animation",
+        "github": "guillett",
+        "missions": [
+            {
+                "start": "2017-03-06",
+                "end": "2017-12-26",
+                "status": "independent",
+                "employer": ""
+            },
+            {
+                "start": "2017-12-27",
+                "end": "2019-12-04",
+                "status": "admin",
+                "employer": "dinum"
+            },
+            {
+                "start": "2019-12-06",
+                "end": "2020-12-25",
+                "status": "admin",
+                "employer": "dinum"
+            },
+            {
+                "start": "2021-01-04",
+                "end": "2021-11-30",
+                "status": "independent",
+                "employer": ""
+            },
+            {
+                "start": "2021-12-01",
+                "end": "2023-06-30",
+                "status": "independent",
+                "employer": "Codeurs en Libert\u00e9"
+            }
+        ],
+        "startups": [
+            "aides.jeunes",
+            "data-inclusion",
+            "tous.a.bord"
+        ],
+        "previously": [
+            "mes-aides",
+            "voir-et-localiser",
+            "data.insertion",
+            "rdv-services-publics"
+        ]
+    }
+    ,
+    {
+        "id": "vermeer.grange",
+        "fullname": "Vermeer Grange",
+        "role": "D\u00e9veloppeur web / Data scientist",
+        "domaine": "D\u00e9veloppement",
+        "missions": [
+            {
+                "start": "2016-10-24",
+                "end": "2019-08-30",
+                "status": "independent",
+                "employer": "ey / pole-emploi"
+            },
+            {
+                "start": "2019-09-01",
+                "end": "2023-12-31",
+                "status": "independent",
+                "employer": "octo"
+            }
+        ],
+        "startups": [
+            "itou",
+            "pilotage.de.linclusion"
+        ],
+        "previously": [
+            "la-bonne-alternance",
+            "la-bonne-boite"
+        ]
+    }
+    ,
+    {
+        "id": "victor.perron",
+        "fullname": "Victor Perron",
+        "role": "D\u00e9veloppeur",
+        "domaine": "D\u00e9veloppement",
+        "github": "vperron",
+        "missions": [
+            {
+                "start": "2022-01-24",
+                "end": "2023-07-07",
+                "status": "independent",
+                "employer": "Malt"
+            }
+        ],
+        "startups": [
+            "itou",
+            "pilotage.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "vincent.viers",
+        "fullname": "Vincent Viers",
+        "role": "Data-trucs et coaching",
+        "domaine": "D\u00e9veloppement",
+        "github": "vviers",
+        "missions": [
+            {
+                "start": "2020-10-19",
+                "end": "2021-11-01",
+                "status": "independent",
+                "employer": "octo"
+            },
+            {
+                "start": "2021-11-01",
+                "end": "2022-09-01",
+                "status": "independent",
+                "employer": "benext"
+            },
+            {
+                "start": "2022-08-22",
+                "end": "2023-06-01",
+                "status": "independent",
+                "employer": "octo"
+            }
+        ],
+        "startups": [
+            "donn\u00e9es-et-territoires",
+            "pilotage.de.linclusion"
+        ],
+        "previously": [
+            "signaux-faibles",
+            "disinfo",
+            "a-just"
+        ]
+    }
+    ,
+    {
+        "id": "yannick.passarelli",
+        "fullname": "Yannick Passarelli",
+        "role": "Data Analyst",
+        "domaine": "Autre",
+        "github": "YannickPassa",
+        "missions": [
+            {
+                "start": "2022-02-14",
+                "end": "2022-08-31",
+                "status": "independent",
+                "employer": "OCTO"
+            },
+            {
+                "start": "2022-09-01",
+                "end": "2025-08-31",
+                "status": "admin",
+                "employer": "gip-inclusion"
+            }
+        ],
+        "startups": [
+            "pilotage.de.linclusion"
+        ]
+    }
+    ,
+    {
+        "id": "valentin.matton",
+        "fullname": "Valentin Matton",
+        "role": "Développeur",
+        "domaine": "Développement",
+        "github": "vmttn",
+        "missions": [
+            {
+                "start": "2022-03-02",
+                "end": "2026-02-28",
+                "status": "independent",
+                "employer": "Octo"
+            }
+        ],
+        "startups": [
+            "data-inclusion"
+        ]
+    }
+    ,
+    {
+            "id": "benjamin.bohec",
+            "fullname": "Benjamin Bohec",
+            "role": "Développeur",
+            "domaine": "Développement",
+            "github": "bbohec",
+            "missions": [
+                { "start": "2022-04-11", "end": "2023-08-31", "status": "independent", "employer": "Orange Consulting" }
+            ],
+            "startups": [
+                "l-immersion-facile"
+            ]
+        }
+        ,
+            {
+            "id": "sliman.charifi-alaoui",
+            "fullname": "Sliman CHARIFI-ALAOUI",
+            "role": "Chargé de développement / immersion facilitée",
+            "domaine": "Développement",
+            "missions": [
+                { "start": "2023-03-01", "end": "2023-08-31", "status": "admin", "employer": "POLE EMPLOI" }
+            ],
+            "startups": [
+                "l-immersion-facile"
+            ]
+        }
+        ,
+        {
+            "id": "vincent.porte",
+            "fullname": "Vincent Porte",
+            "role": "Developpeur",
+            "domaine": "Développement",
+            "github": "vincentporte",
+            "missions": [
+                { "start": "2022-01-17", "end": "2023-06-30", "status": "independent", "employer": "Octo" }
+            ],
+            "startups": [
+                "la.communaute.de.linclusion",
+                "itou"
+            ]
+        }
+        ,
+        {
+            "id": "annie.rasatandrianombana",
+            "fullname": "Annie Rasatandrianombana",
+            "role": "Chargée déploiement",
+            "domaine": "Déploiement",
+            "github": "Annie-RB",
+            "missions": [
+                    { "start": "2021-04-02", "end": "2021-12-10", "status": "independent", "employer": "Octo" },
+                    { "start": "2022-02-07", "end": "2023-09-30", "status": "independent", "employer": "Octo" }
+            ],
+            "startups": [
+                "itou",
+                "pilotage.de.linclusion"
+            ],
+            "previously": [
+                    "resorption-bidonvilles"
+            ]
+        }
+        ,
+        {
+            "id": "paul.souche",
+            "fullname": "Paul SOUCHE",
+            "role": "Développeur",
+            "domaine": "Développement",
+            "github": "paulsouche",
+            "missions": [
+                { "start": "2023-03-01", "end": "2023-04-28", "status": "independent", "employer": "Opteamis" }
+            ],
+            "startups": [
+                    "maison.de.lautisme"
+            ]
+        }
+        ,
+        {
+            "id": "lilian.sagetlethias",
+            "fullname": "Lilian Saget-Lethias",
+            "role": "Lead Dev / Coach Tech",
+            "domaine": "Développement",
+            "github": "lsagetlethias",
+            "missions": [
+                    { "start": "2021-09-01", "end": "2022-03-01", "status": "independent", "employer": "Octo" },
+                    { "start": "2022-03-01", "end": "2023-12-31", "status": "independent", "employer": "Octo" }
+            ],
+            "startups": [
+                "egalite.professionnelle",
+                "maison.de.lautisme"
+            ],
+            "previously": [
+                "archifiltre"
+            ]
+        }
+        ,
+        {
+            "id": "manon.silva",
+            "fullname": "Manon SILVA",
+            "role": "BizDev",
+            "domaine": "Animation",
+            "missions": [
+                    { "start": "2022-10-24", "end": "2023-07-02", "status": "independent", "employer": "Octo" }
+            ],
+            "startups": [
+                    "maison.de.lautisme"
+            ]
+        }
+]

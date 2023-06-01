@@ -1,0 +1,172 @@
+{
+  "data-inclusion": {
+    "active_members": [
+      "agathe.latreille",
+      "colin.maudry",
+      "nicolas.enjalbert",
+      "thomas.guillet",
+      "valentin.matton"
+    ],
+    "previous_members": [
+      "arnaud.denoix",
+      "aurelien.allard",
+      "patrick.lambret"
+    ],
+    "expired_members": [
+
+    ],
+    "id": "data-inclusion",
+    "name": "data·inclusion",
+    "repository": "",
+    "contact": "data.inclusion@beta.gouv.fr",
+    "phases": [
+      {
+        "name": "investigation",
+        "start": "2022-03-17"
+      },
+      {
+        "name": "construction",
+        "start": "2022-06-30"
+      }
+    ]
+  },
+  "l-immersion-facile": {
+    "active_members": [
+      "benjamin.bohec",
+      "cecile.di.marco",
+      "clement.duport",
+      "elodie.delaisement",
+      "enguerran.weiss",
+      "herve.lallemand",
+      "jerome.burkard",
+      "jessica.celeste",
+      "nastassia.rodriguez",
+      "nathalie.reyre",
+      "pierre.putois",
+      "raphael.pierquin",
+      "romain.cambonie",
+      "sebastien.hoffmann",
+      "sliman.charifi-alaoui"
+    ],
+    "previous_members": [
+
+    ],
+    "expired_members": [
+      "caroline.wengerow",
+      "clement.moutet",
+      "dessimira.manolova",
+      "jean-francois.macresy",
+      "laura.lowenthal",
+      "nicolas.wettstein",
+      "raphaelle.bertrandlalo",
+      "selma.ben-hassen",
+      "simon.delacroix",
+      "stephane.khapugin"
+    ],
+    "id": "l-immersion-facile",
+    "name": "Immersion facilitée",
+    "repository": "https://github.com/betagouv/l-immersion-facile",
+    "contact": "contact@immersion-facile.beta.gouv.fr",
+    "phases": [
+      {
+        "name": "construction",
+        "start": "2021-07-16"
+      },
+      {
+        "name": "acceleration",
+        "start": "2022-05-31"
+      }
+    ]
+  },
+  "la.communaute.de.linclusion": {
+    "active_members": [
+      "julie.landes",
+      "karel.cloarec",
+      "louise.marti",
+      "lucas.pastel",
+      "nadege.vaugrenard",
+      "sophie.garcia",
+      "vincent.porte"
+    ],
+    "previous_members": [
+      "sebastien.reuiller"
+    ],
+    "expired_members": [
+      "clement.camin"
+    ],
+    "id": "la.communaute.de.linclusion",
+    "name": "Communauté de l'inclusion",
+    "repository": "http://github.com/betagouv/itou",
+    "contact": "contact@inclusion.beta.gouv.fr",
+    "phases": [
+      {
+        "name": "construction",
+        "start": "2020-06-01"
+      }
+    ]
+  },
+  "maison.de.lautisme": {
+    "active_members": [
+      "lilian.sagetlethias",
+      "manon.silva",
+      "paul.souche"
+    ],
+    "previous_members": [
+
+    ],
+    "expired_members": [
+
+    ],
+    "id": "maison.de.lautisme",
+    "name": "Maison de l'autisme",
+    "repository": "https://github.com/SocialGouv/mda",
+    "contact": "autisme.tnd@pm.gouv.fr",
+    "phases": [
+      {
+        "name": "investigation",
+        "start": "2022-09-05",
+        "end": "2022-12-07"
+      },
+      {
+        "name": "construction",
+        "start": "2022-12-12"
+      }
+    ]
+  },
+  "pilotage.de.linclusion": {
+    "active_members": [
+      "annie.rasatandrianombana",
+      "aurelie.marre",
+      "joffrey.mougel",
+      "julie.landes",
+      "laurine.huber",
+      "sabrina.benmohamed",
+      "vermeer.grange",
+      "victor.perron",
+      "vincent.viers",
+      "yannick.passarelli"
+    ],
+    "previous_members": [
+
+    ],
+    "expired_members": [
+      "pierre.deleforge",
+      "soumia.ahlouch",
+      "william.godbert"
+    ],
+    "id": "pilotage.de.linclusion",
+    "name": "Pilotage de l'inclusion",
+    "repository": "http://github.com/betagouv/itou",
+    "contact": "contact@inclusion.beta.gouv.fr",
+    "phases": [
+      {
+        "name": "construction",
+        "start": "2020-06-01"
+      },
+      {
+        "name": "acceleration",
+        "start": "2022-05-31"
+      }
+    ]
+  }
+}
