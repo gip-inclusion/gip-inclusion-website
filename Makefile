@@ -1,32 +1,33 @@
-reset-db:
-	psql -c 'DROP DATABASE giw;'
-	psql -c 'ALTER USER giw CREATEDB;'
-	psql -c 'CREATE DATABASE giw OWNER giw;'
-	python manage.py migrate
+ifeq ($(USE_VENV),1)
+	EXEC_CMD :=
+else
+	EXEC_CMD := docker-compose exec -ti web
+endif
 
 .PHONY: web-prompt
 web-prompt:
-	docker-compose run --rm web bash
+	$(EXEC_CMD) bash
 
 .PHONY: test-unit
 test-unit:
-	python manage.py test --settings config.settings_test
+	$(EXEC_CMD) python manage.py test --settings config.settings_test
 
 .PHONY: test-e2e
 test-e2e:
-	python manage.py behave --settings config.settings_test
+	$(EXEC_CMD) python manage.py behave --settings config.settings_test
 
 .PHONY: test
 test: test-e2e test-unit
 
 .PHONY: quality
 quality:
-	black --check --exclude=venv .
-	isort --check --skip-glob="**/migrations" --extend-skip-glob="venv" .
-	flake8 --count --show-source --statistics --exclude=venv .
+	$(EXEC_CMD) black --check --exclude=venv .
+	$(EXEC_CMD) isort --check --skip-glob="**/migrations" --extend-skip-glob="venv" .
+	$(EXEC_CMD) flake8 --count --show-source --statistics --exclude=venv .
 
 .PHONY: fix
 fix:
-	black --exclude=venv .
-	isort --skip-glob="**/migrations" --extend-skip-glob="venv" .
-	djlint --reformat --use-gitignore .
+	$(EXEC_CMD) black --exclude=venv .
+	$(EXEC_CMD) isort --skip-glob="**/migrations" --extend-skip-glob="venv" .
+	$(EXEC_CMD) djhtml $(shell find templates -name "*.html")
+	$(EXEC_CMD) flake8 --exclude=venv .
