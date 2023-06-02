@@ -1,7 +1,11 @@
+#btn-menu-services {
+  z-index: 1752; }
+
 #menu-services {
   position: absolute;
   text-align: left;
-  padding: 3em 1em 1em 1em; }
+  padding: 3em 1em 1em 1em;
+  z-index: 1751; }
   #menu-services .menu-services-container {
     background: var(--background-default-grey);
     filter: drop-shadow(var(--raised-shadow)); }

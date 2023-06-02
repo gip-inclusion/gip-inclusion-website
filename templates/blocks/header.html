@@ -13,10 +13,10 @@
 {% endblock service_tagline %}
 {% block header_tools %}
     <div class="fr-header__tools-links">{% flat_menu handle="header_tools" template="menus/custom_flat_menu.html"  %}</div>
-    <button class="fr-btn" aria-expanded="false" aria-controls="menu-services">
+    <button id="btn-menu-services" class="fr-btn" aria-expanded="false" aria-controls="menu-services">
         <img src="{% static 'images/services-ico.svg' %}" alt="" />
     </button>
-    <div class="fr-collapse" id="menu-services">
+    <div id="menu-services" class="fr-collapse">
         <div class="menu-services-container">
             <p>
                 <strong>Nos services numériques</strong>
