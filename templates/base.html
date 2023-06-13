@@ -56,21 +56,32 @@
             {% endblock content %}
         </main>
         {% include "blocks/footer.html" %}
-        {% if MATOMO_SITE_ID and MATOMO_URL %}
-            <!-- Matomo -->
-            <script>
-                var _paq = window._paq = window._paq || [];
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
-                (function() {
-                var u="{{ MATOMO_URL }}";
-                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                _paq.push(['setSiteId', '{{ MATOMO_SITE_ID }}']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-                })();
-            </script>
-            <!-- End Matomo Code -->
+        {% if MATOMO_URL %}
+            {% if MATOMO_SITE_ID %}
+                <!-- Matomo -->
+                <script>
+                    var _paq = window._paq = window._paq || [];
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    (function() {
+                    var u="{{ MATOMO_URL }}";
+                    _paq.push(['setTrackerUrl', u+'piwik.php']);
+                    _paq.push(['setSiteId', '{{ MATOMO_SITE_ID }}']);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                    })();
+                </script>
+                <!-- End Matomo Code -->
+            {% elif MATOMO_TAG_MANAGER_CONTAINER %}
+                <!-- Matomo Tag Manager -->
+                <script>
+                    var _mtm = window._mtm = window._mtm || [];
+                    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src='{{ MATOMO_URL }}/js/container_{{ MATOMO_TAG_MANAGER_CONTAINER }}.js'; s.parentNode.insertBefore(g,s);
+                </script>
+                <!-- End Matomo Tag Manager -->
+            {% endif %}
         {% endif %}
         {% dsfr_js %}
         {% block extra_js %}

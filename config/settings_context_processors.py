@@ -9,4 +9,5 @@ def expose_settings(request):
     return {
         "MATOMO_SITE_ID": settings.MATOMO_SITE_ID,
         "MATOMO_URL": settings.MATOMO_URL,
+        "MATOMO_TAG_MANAGER_CONTAINER": settings.MATOMO_TAG_MANAGER_CONTAINER,
     }

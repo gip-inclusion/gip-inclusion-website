@@ -242,3 +242,4 @@ WAGTAILEMBEDS_GRIST_HEIGHT = 400
 # ---------------------------------------
 MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
 MATOMO_URL = os.getenv("MATOMO_URL")
+MATOMO_TAG_MANAGER_CONTAINER = os.getenv("MATOMO_TAG_MANAGER_CONTAINER")
