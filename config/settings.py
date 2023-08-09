@@ -238,6 +238,10 @@ WAGTAILEMBEDS_FINDERS = [
 # Height for custom Grist Embed
 WAGTAILEMBEDS_GRIST_HEIGHT = 400
 
+# Increase throttling to avoid Bad request errors when saving large pages
+# https://docs.djangoproject.com/en/4.2/ref/settings/#data-upload-max-number-fields
+DATA_UPLOAD_MAX_NUMBER_FIELDS = os.getenv("DATA_UPLOAD_MAX_NUMBER_FIELDS", 10000)
+
 # MATOMO
 # ---------------------------------------
 MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
