@@ -1,13 +1,14 @@
 {% extends "dsfr/header.html" %}
 {% load static wagtailcore_tags wagtailimages_tags menu_tags services_tags %}
 {% block brand %}
-    <a href="/" title="Accueil — {{ SITE_CONFIG.site_title }}">
-        <img src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}"
-             alt="La Plateforme de l'inclusion"
-             class="logo"/>
-    </a>
+    <p class="fr-logo">République<br />Française</p>
 {% endblock brand %}
 {% block service_title %}
+    <a href="/" title="Accueil — La plateforme de l’inclusion">        
+        <p class="fr-header__service-title">
+            <img class="fr-responsive-img logo" src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}" alt="La Plateforme de l’inclusion">
+        </p>
+    </a>
 {% endblock service_title %}
 {% block service_tagline %}
 {% endblock service_tagline %}

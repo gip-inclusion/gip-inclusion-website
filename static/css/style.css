@@ -28,6 +28,9 @@
   max-width: 50%;
   aspect-ratio: auto; }
 
+.fr-header__service-title .fr-responsive-img {
+  width: auto; }
+
 @media (max-width: 64em) {
   .service_banner {
     background-size: 0; } }
