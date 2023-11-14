@@ -122,7 +122,7 @@ badge_level_choices = [
 
 class CardBlock(blocks.StructBlock):
     title = blocks.CharBlock(label="Titre")
-    text = blocks.TextBlock(label="Texte")
+    text = blocks.TextBlock(label="Texte", required=False)
     image = ImageChooserBlock(label="Image", required=False)
     url = blocks.URLBlock(label="Lien", required=False)
     document = DocumentChooserBlock(
