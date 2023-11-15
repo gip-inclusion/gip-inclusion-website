@@ -223,6 +223,7 @@ WAGTAIL_MODERATION_ENABLED = False
 WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
     ("header_tools", "Menu en haut à droite"),
     ("footer", "Menu en pied de page"),
+    ("footer_ressources", "Menu Ressources du pied de page"),
 )
 
 WAGTAILEMBEDS_FINDERS = [
