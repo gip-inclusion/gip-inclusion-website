@@ -1,0 +1,7 @@
+{
+    "jobs": [
+        {
+            "command": "0 7 * * * python manage.py syncbetadata"
+        }
+    ]
+}
