@@ -29,7 +29,7 @@ class Command(BaseCommand):
         )
 
     def sync_services(self):
-        # TODO: Delete services that no longer exist
+
         self.stdout.write("Fetch services data")
         self.gip_startups = []
         resp = httpx.get(BETA_GOUV_STARTUPS_ENDPOINT)
@@ -45,17 +45,22 @@ class Command(BaseCommand):
                 service = self.get_markdown_section("Notre service", markdown_content)
                 problem = self.get_markdown_section("Le problème", markdown_content)
                 phases = data["attributes"].get("phases", [{"name": ""}])
-                attributes = {
-                    "beta_id": data["id"],
-                    "title": data["attributes"]["name"],
-                    "pitch": data["attributes"]["pitch"],
-                    "link": link,
-                    "problem": problem,
-                    "service": service,
-                    "last_phase": phases[-1]["name"],
-                }
-                self.create_or_update_service(data["id"], attributes)
-                self.gip_startups.append(data["id"])
+                last_phase = phases[-1]["name"]
+
+                if last_phase == "alumni":
+                    self.delete_service(data["id"])
+                else:
+                    attributes = {
+                        "beta_id": data["id"],
+                        "title": data["attributes"]["name"],
+                        "pitch": data["attributes"]["pitch"],
+                        "link": link,
+                        "problem": problem,
+                        "service": service,
+                        "last_phase": last_phase,
+                    }
+                    self.create_or_update_service(data["id"], attributes)
+                    self.gip_startups.append(data["id"])
 
     def fetch_active_member_on_startup(self):
         self.active_members = {}
@@ -131,6 +136,17 @@ class Command(BaseCommand):
                 raise CommandError(
                     "A page called 'Nos services' with slug 'nos-services' is needed to add new service"
                 )
+
+    def delete_service(self, service_id):
+        try:
+            service = ServicePage.objects.get(beta_id=service_id)
+            service.delete()
+            self.stdout.write(f"Service deleted!")
+
+            # TODO: check if add redirection to avoid 404 is needed
+        except ServicePage.DoesNotExist:
+            self.stdout.write(f"Service already deleted.")
+            pass  # service already deleted
 
     def create_or_update_member(self, member_id, services, attributes):
         # try to update

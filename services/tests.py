@@ -94,3 +94,30 @@ class ServiceTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, service_success.beta_name)
         self.assertNotContains(response, service_alumni.beta_name)
+
+    @respx.mock
+    def test_syncbetadata_alumni_services_deleted(self):
+        out = StringIO()
+        err = StringIO()
+
+        _ = ContentPageFactory(slug="nos-services")
+
+        alumni_slug = "carnet.de.bord"
+        ServicePageFactory(beta_id=alumni_slug)
+        self.assertEqual(ServicePage.objects.count(), 1)
+
+        management.call_command(
+            "syncbetadata",
+            stdout=out,
+            stderr=err,
+        )
+
+        # Output look well
+        self.assertIn("Getting data completed : 4 services and 36 members synchronized", out.getvalue())
+        self.assertEqual(err.getvalue(), "")
+        self.assertIn("Service deleted!", out.getvalue())
+
+        # In DB, the account is good
+        self.assertEqual(ServicePage.objects.count(), 4)
+        self.assertEqual(Member.objects.count(), 36)
+        self.assertFalse(ServicePage.objects.filter(beta_id=alumni_slug).exists())
