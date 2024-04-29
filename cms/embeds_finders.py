@@ -45,6 +45,9 @@ class MetabaseFinder(EmbedFinder):
         html = f'''
             <iframe src="{url}" height="{settings.WAGTAILEMBEDS_METABASE_HEIGHT}" width="100%"></iframe>
             <script src="{self.resizer_url(url)}"></script>
+            <script>
+                iFrameResize({{}}, "iframe");
+            </script>
         '''
         return {
             "title": "Metabase Embed",
