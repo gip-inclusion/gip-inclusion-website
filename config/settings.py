@@ -230,6 +230,9 @@ WAGTAILEMBEDS_FINDERS = [
     {
         "class": "cms.embeds_finders.GristFinder",
     },
+    {
+        "class": "cms.embeds_finders.MetabaseFinder",
+    },
     # Handles all other oEmbed providers the default way
     {
         "class": "wagtail.embeds.finders.oembed",
@@ -238,6 +241,12 @@ WAGTAILEMBEDS_FINDERS = [
 
 # Height for custom Grist Embed
 WAGTAILEMBEDS_GRIST_HEIGHT = 400
+
+# Height for custom Metabase Embed
+WAGTAILEMBEDS_METABASE_HEIGHT = 650
+
+# Auto-sizer script for custom Metabase Embed
+WAGTAILEMBEDS_METABASE_IFRAME_RESIZER_URL = "/app/iframeResizer.js"
 
 # Increase throttling to avoid Bad request errors when saving large pages
 # https://docs.djangoproject.com/en/4.2/ref/settings/#data-upload-max-number-fields
