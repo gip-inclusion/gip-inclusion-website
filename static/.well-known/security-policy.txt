@@ -1,0 +1,215 @@
+Plateforme de l'inclusion                   Mai 2024
+https://inclusion.beta.gouv.fr
+
+
+                    Politique et procédures
+                    de divulgation de failles
+
+
+Please use french or english for communication.
+English version below. (Starts at "ENGLISH VERSION")
+
+Table des matières
+
+    1.  Introduction
+    2.  Signaler une faille
+    3.  Temps de traitement
+    4.  Portée
+    5.  Exclusions
+    6.  Cadre de la preuve
+    7.  Références
+
+1.  Introduction
+
+    Ce document cadre la politique de divulgation des vulnérabilités pour tous les
+    projets de la Plateforme de l'inclusion. Son objectif est de permettre à tout
+    chercheur en vulnérabilité web de tester et de signaler d'éventuelles failles
+    dans le périmètre de l’organisation, selon un cadre prédéfini.
+
+2.  Signaler une faille
+
+    Nous étudierons les rapports légitimes et mettrons tout en œuvre pour répondre au
+    plus vite. Merci de bien vouloir éviter la violation de la vie privée, la
+    destruction de données et la dégradation ou l'interruption de nos services.
+
+    Il est également important de suivre les consignes listées dans la partie "Proof
+    of concepts" ci-dessous pour assurer la qualité de votre démonstration.
+
+    Pour toutes questions ou doutes à propos de notre politique de divulgation,
+    n'hésitez pas à nous contacter par email. Si besoin, nous mettons à disposition
+    note clé PGP publique pour assurer la confidentialité de la communication.
+    
+    email : charles.capelli@beta.gouv.fr
+    clé PGP : https://inclusion.beta.gouv.fr/.well-known/pdi-pgp.asc
+
+3. Temps de traitement
+
+    Nous ferons au mieux pour respecter les temps de traitement suivants pour répondre
+    aux professionnels participants :
+        - Réponse initiale : 24h
+        - Réponse de traitement : 72h
+
+4. Portée
+
+    Sont dans la portée de notre politique de sécurité tous les sous-domaines dans
+    lesquels un fichier .well-known/security.txt faisant référence à cette page peut-
+    être trouvé. Merci de toujours vérifier que le fichier security.txt renvoie vers
+    cette page. Si ce n'est pas le cas, le sous-domaine est considéré comme hors de
+    portée.
+
+    $ curl -s http://example.inclusion.beta.gouv.fr/.well-known/security.txt \
+        | grep Policy
+    Policy: https://inclusion.beta.gouv.fr/security-policy
+
+5. Exclusions
+
+    Les types de tests suivant sont considérés comme hors de portée :
+        - Résultats d'un test physique comme un accès à un bureau.
+        - Résultats provenant de méthodes d'ingénierie sociale (hameçonnage par
+            exemple).
+        - Résultats d'applications ou de systèmes hors de la portée de notre politique
+            de sécurité.
+        - Rapport de vulnérabilité fondé sur un PoC vidéo.
+        - Rapport ne s'appuyant pas sur un PoC.
+        - Rapports théoriques sur de potentiels dommages.
+        - Vulnérabilités remontées par des outils automatisés ou des scanners sans
+            analyses complémentaires.
+        - Les sujets liés à un service tiers doivent être rapportés à l'équipe en
+            charge du service en question.
+
+    Les sujets suivants sont exclus :
+        - Déni de service sur la couche réseau
+        - Bugs UI/UX
+        - Problèmes d'en-têtes non accompagnés d'une démonstration fonctionnelle
+        - Divulgation de bannières de services
+
+6. Cadre de la preuve
+
+    - XSS : Un simple alert(document.domain) devrait suffire.
+    - RCE : Merci de ne pas exécuter du code malveillant. Une simple évaluation de
+        variable ou un print devrait être suffisant pour démontrer la vulnérabilité.
+    - SQLi : Rapporter le problème dès que vous avez une erreur SQL qui indique une
+        injection ou bien divulguer la version du serveur SQL
+    - Redirection invalide : Paramétrer la redirection vers http://example.co
+    - Divulgation d'informations : Si votre rapport contient des données sensibles,
+        vous pouvez utiliser notre clé PGP pour chiffrer votre message.
+    - CSRF : Attachez soit un fichier démontrant la vulnérabilité ou collez le code
+        dans votre rapport.
+    - SSRF : Ne jouez pas avec le réseau interne s'il vous plait. Si vous devez
+        retrouver un fichier, merci de ne requêter que le fichier security.txt.
+    - LFI : La meme règle s'applique ici. N'allez pas à l'encontre de celles-ci et de
+        la philosophie de ce document. Il devrait y avoir un fichier security.txt dans
+        le dossier .well-known. Le retrouver devrait être suffisant pour administrer
+        la preuve.
+
+7. Références
+
+    Merci d'avance pour votre contribution à la sécurité de nos projets !
+    Cette page est fortement inspirée de celle d'Edoverflow contributeur de la
+    RFC9116.
+
+    edoverflow : https://hackerone.com/ed?type=team&view_policy=true
+    RFC9116 : https://www.rfc-editor.org/rfc/rfc9116
+
+
+
+ENGLISH VERSION
+
+This is a vulnerability disclosure program for all of projects and code the organism
+publish.
+
+
+Table of contents:
+    1.  Alerting
+    2.  Service-level agreement    
+    3.  In-scope
+    4.  Exclusions
+    5.  Proof of Concepts
+    6.  References
+
+
+1. Alerting
+
+    We will investigate legitimate reports and make every effort to quickly resolve
+    any vulnerability. Please make a good faith effort to avoid privacy violations,
+    destruction of data, and interruption or degradation of our services.
+
+    Please follow the guidelines listed in the Proof of concepts section below to
+    ensure that your proof of concept is detailed enough to demonstrate the issue.
+
+    If you have any questions or concerns about our disclosure policy, please do not
+    hesitate to contact us via email. If needed, you can use our PGP public key to
+    protect your communication.
+
+    email: charles.capelli@beta.gouv.fr
+    PGP key: https://inclusion.beta.gouv.fr/.well-known/pdi-pgp.asc
+
+
+2. Service-level agreement (Performance expectations)
+
+    We will make a best effort to meet the following expectations for professionals
+    participating in this program:
+        - Time to first response: 24h
+        - Time to triage: 72h
+
+3. In scope
+
+    All subdomains where you can retrieve a .well-know/security.txt. Please always
+    verify that the security.txt file points to this page. If it doesn't, then that
+    project is considered as out of scope.
+
+    $ curl -s http://example.inclusion.beta.gouv.fr/.well-known/security.txt \
+        | grep Policy
+    Policy: https://inclusion.beta.gouv.fr/security-policy
+
+4. Exclusions
+
+    The following test types are excluded from the scope:
+        - Findings from physical testing such as office access (e.g. open doors,
+            tailgating).
+        - Findings derived primarily from social engineering (e.g. phishing, vishing).
+        - Findings from applications or systems not listed in the "Scope" section.
+        - Vulnerability reports with video only PoCs.
+        - Reports that state that software is out of date or vulnerable without a
+            proof of concept.
+        - Highly speculative reports about theoretical damage.
+        - Vulnerabilities as reported by automated tools without additional analysis
+            as to how they’re an issue.
+        - Issues in third-party services should be reported to the respective team.
+
+        The following issue types are excluded from scope:
+
+        - Network-level Denial of Service (DoS/DDoS) vulnerabilities
+        - UI and UX bugs (including spelling mistakes).
+        - Host header issues without an accompanying proof-of-concept demonstrating
+            vulnerability.
+        - Banner grabbing issues.
+        - CSP uses unsafe-inline without solid PoC
+
+5. Proof of concepts
+
+    - XSS: For XSS, a simple alert(document.domain) should suffice.
+    - RCE: Please only execute harmless code. Simply printing something or evaluating
+        an expression should be enough to demonstrate the issue.
+    - SQLi: Report it as soon as you have a SQL error that indicates SQL injection or
+        you are able to disclose the SQL server's version number.
+    - Unvalidated redirect: Set the redirect endpoint to http://example.com.
+    - Information disclosure: If your report contains sensitive data, please use our
+        PGP key to encrypt it.
+    - CSRF: Either attach a file to demonstrate the issue or paste the code in a code
+        block in your report.
+    - SSRF: Do not go playing around on any internal networks. If you feel the
+        necessity to retrieve an internal file, please only request the internal
+        security.txt file.
+    - LFI: The same applies here — please do not go against the guideline listed in
+        the Disclosure policy section. There should be a security.txt file located in
+        the .well-known directory. Being able to retrieve that file should be enough
+        to demonstrate the issue.
+
+6. References
+
+    Thank you for helping us keep our projects safe!
+    Page strongly based on Edoverflow security policy page, contributor to RFC9116.
+
+    edoverflow: https://hackerone.com/ed?type=team&view_policy=true
+    RFC9116: https://www.rfc-editor.org/rfc/rfc9116
