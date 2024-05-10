@@ -1,9 +1,9 @@
-Plateforme de l'inclusion                   Mai 2024
+Plateforme de l'inclusion                                               Mai 2024
 https://inclusion.beta.gouv.fr
 
 
-                    Politique et procédures
-                    de divulgation de failles
+                                Politique et procédures
+                                de divulgation de failles
 
 
 Please use french or english for communication.
