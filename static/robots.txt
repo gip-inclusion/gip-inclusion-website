@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /cms-admin/
+Sitemap: https://inclusion.beta.gouv.fr/sitemap.xml
