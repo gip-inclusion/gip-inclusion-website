@@ -39,8 +39,8 @@ Table des matières
     n'hésitez pas à nous contacter par email. Si besoin, nous mettons à disposition
     note clé PGP publique pour assurer la confidentialité de la communication.
     
-    email : charles.capelli@beta.gouv.fr
-    clé PGP : https://inclusion.beta.gouv.fr/.well-known/pdi-pgp.asc
+    email : service.securite@gip-inclusion.org
+    clé PGP : https://inclusion.beta.gouv.fr/service.securite@gip-inclusion.org
 
 3. Temps de traitement
 
@@ -141,7 +141,7 @@ Table of contents:
     hesitate to contact us via email. If needed, you can use our PGP public key to
     protect your communication.
 
-    email: charles.capelli@beta.gouv.fr
+    email: service.securite@gip-inclusion.org
     PGP key: https://inclusion.beta.gouv.fr/.well-known/pdi-pgp.asc
 
 
