@@ -133,7 +133,10 @@ class Migration(migrations.Migration):
                                 (
                                     "url",
                                     wagtail.blocks.URLBlock(
-                                        help_text="URL au format 'embed' (Ex. : https://www.youtube.com/embed/gLzXOViPX-0)",
+                                        help_text=(
+                                            "URL au format 'embed' (Ex. : "
+                                            "https://www.youtube.com/embed/gLzXOViPX-0)"
+                                        ),
                                         label="Lien de la vidéo",
                                     ),
                                 ),
@@ -167,7 +170,9 @@ class Migration(migrations.Migration):
                                     "bg_color",
                                     wagtail.blocks.RegexBlock(
                                         error_messages={
-                                            "invalid": "La couleur n'est pas correcte, le format doit être #fff ou #f5f5fe"
+                                            "invalid": (
+                                                "La couleur n'est pas correcte, le format doit être #fff ou #f5f5fe"
+                                            )
                                         },
                                         label="Couleur d'arrière plan au format hexa (Ex: #f5f5fe)",
                                         regex="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
@@ -197,7 +202,10 @@ class Migration(migrations.Migration):
                                                         (
                                                             "alt",
                                                             wagtail.blocks.CharBlock(
-                                                                label="Texte alternatif (description textuelle de l'image)",
+                                                                label=(
+                                                                    "Texte alternatif (description "
+                                                                    "textuelle de l'image)"
+                                                                ),
                                                                 required=False,
                                                             ),
                                                         ),
@@ -224,7 +232,10 @@ class Migration(migrations.Migration):
                                                         (
                                                             "url",
                                                             wagtail.blocks.URLBlock(
-                                                                help_text="URL au format 'embed' (Ex. : https://www.youtube.com/embed/gLzXOViPX-0)",
+                                                                help_text=(
+                                                                    "URL au format 'embed' (Ex. : "
+                                                                    "https://www.youtube.com/embed/gLzXOViPX-0)"
+                                                                ),
                                                                 label="Lien de la vidéo",
                                                             ),
                                                         ),
@@ -247,11 +258,18 @@ class Migration(migrations.Migration):
                                                                 label="Image", required=False
                                                             ),
                                                         ),
-                                                        ("url", wagtail.blocks.URLBlock(label="Lien", required=False)),
+                                                        (
+                                                            "url",
+                                                            wagtail.blocks.URLBlock(label="Lien", required=False),
+                                                        ),
                                                         (
                                                             "document",
                                                             wagtail.documents.blocks.DocumentChooserBlock(
-                                                                help_text="Sélectionnez un document pour rendre la carte cliquable vers celui ci (si le champ `Lien` n'est pas renseigné).",
+                                                                help_text=(
+                                                                    "Sélectionnez un document pour rendre la carte "
+                                                                    "cliquable vers celui ci (si le champ `Lien` "
+                                                                    "n'est pas renseigné)."
+                                                                ),
                                                                 label="ou Document",
                                                                 required=False,
                                                             ),
@@ -325,7 +343,10 @@ class Migration(migrations.Migration):
                                                         (
                                                             "cta_label",
                                                             wagtail.blocks.CharBlock(
-                                                                help_text="Le lien apparait comme un bouton sous le bloc de texte",
+                                                                help_text=(
+                                                                    "Le lien apparait comme un bouton sous "
+                                                                    "le bloc de texte"
+                                                                ),
                                                                 label="Titre de l'appel à l'action",
                                                                 required=False,
                                                             ),
