@@ -1,6 +1,5 @@
 from django.urls import include, path
 
-
 from .views import serve_text_file
 
 
