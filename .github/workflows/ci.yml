@@ -35,6 +35,8 @@ jobs:
       - name: ✨ Black, isort, flake8
         run: |
           make quality
+        env:
+          USE_VENV: 1
       - name: 🚧 Check pending migrations
         run: |
           django-admin makemigrations --check --dry-run --noinput
