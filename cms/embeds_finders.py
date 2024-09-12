@@ -1,6 +1,6 @@
 import re
-
 from urllib.parse import urlparse
+
 from django.conf import settings
 from wagtail.embeds.finders.base import EmbedFinder
 
@@ -26,6 +26,7 @@ class GristFinder(EmbedFinder):
             "html": html,
         }
 
+
 class MetabaseFinder(EmbedFinder):
     def __init__(self, **options):
         pass
@@ -42,13 +43,13 @@ class MetabaseFinder(EmbedFinder):
         return f"//{self.metabase_domain(url)}{settings.WAGTAILEMBEDS_METABASE_IFRAME_RESIZER_URL}"
 
     def find_embed(self, url, max_width=None):
-        html = f'''
+        html = f"""
             <iframe src="{url}" height="{settings.WAGTAILEMBEDS_METABASE_HEIGHT}" width="100%"></iframe>
             <script src="{self.resizer_url(url)}"></script>
             <script>
                 iFrameResize({{}}, "iframe");
             </script>
-        '''
+        """
         return {
             "title": "Metabase Embed",
             "author_name": "Plateforme de l'inclision",

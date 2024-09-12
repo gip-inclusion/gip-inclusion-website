@@ -141,11 +141,11 @@ class Command(BaseCommand):
         try:
             service = ServicePage.objects.get(beta_id=service_id)
             service.delete()
-            self.stdout.write(f"Service deleted!")
+            self.stdout.write("Service deleted!")
 
             # TODO: check if add redirection to avoid 404 is needed
         except ServicePage.DoesNotExist:
-            self.stdout.write(f"Service already deleted.")
+            self.stdout.write("Service already deleted.")
             pass  # service already deleted
 
     def create_or_update_member(self, member_id, services, attributes):
