@@ -29,7 +29,7 @@
                         <a class="fr-nav__link"
                            {% if service.beta_link %}href="{{ service.beta_link }}" target="_blank"{% else %}href="{% pageurl service %}"{% endif %}>
                             {% if service.logo %}
-                                {% image service.logo fill-20x20 alt="" %}
+                                {% image service.logo fill-40x40 height="20" width="20" alt="" %}
                             {% else %}
                                 <img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />
                             {% endif %}
