@@ -11,6 +11,7 @@ Please report security bugs in third-party modules to the person or team maintai
 ## Informations needed
 
 In order to quickly deal with issued vulnerabilites, your disclosure may at least embed:
+
 - Concerned versions
 - Quick description
-- Proof of Concept according to our [vulnerability disclosure program](https://inclusion.beta.gouv.fr/.well-known/security-policy.txt)
+- Proof of Concept according to our [vulnerability disclosure program](https://inclusion.gouv.fr/.well-known/security-policy.txt)
