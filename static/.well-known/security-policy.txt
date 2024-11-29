@@ -1,5 +1,5 @@
 Plateforme de l'inclusion                                               Mai 2024
-https://inclusion.beta.gouv.fr
+https://inclusion.gouv.fr
 
 
                                 Politique et procédures
@@ -40,7 +40,7 @@ Table des matières
     note clé PGP publique pour assurer la confidentialité de la communication.
     
     email : service.securite@gip-inclusion.org
-    clé PGP : https://inclusion.beta.gouv.fr/service.securite@gip-inclusion.org
+    clé PGP : https://inclusion.gouv.fr/service.securite@gip-inclusion.org
 
 3. Temps de traitement
 
@@ -57,9 +57,9 @@ Table des matières
     cette page. Si ce n'est pas le cas, le sous-domaine est considéré comme hors de
     portée.
 
-    $ curl -s http://example.inclusion.beta.gouv.fr/.well-known/security.txt \
+    $ curl -s http://example.inclusion.gouv.fr/.well-known/security.txt \
         | grep Policy
-    Policy: https://inclusion.beta.gouv.fr/security-policy
+    Policy: https://inclusion.gouv.fr/security-policy
 
 5. Exclusions
 
@@ -142,7 +142,7 @@ Table of contents:
     protect your communication.
 
     email: service.securite@gip-inclusion.org
-    PGP key: https://inclusion.beta.gouv.fr/.well-known/pdi-pgp.asc
+    PGP key: https://inclusion.gouv.fr/.well-known/pdi-pgp.asc
 
 
 2. Service-level agreement (Performance expectations)
@@ -158,9 +158,9 @@ Table of contents:
     verify that the security.txt file points to this page. If it doesn't, then that
     project is considered as out of scope.
 
-    $ curl -s http://example.inclusion.beta.gouv.fr/.well-known/security.txt \
+    $ curl -s http://example.inclusion.gouv.fr/.well-known/security.txt \
         | grep Policy
-    Policy: https://inclusion.beta.gouv.fr/security-policy
+    Policy: https://inclusion.gouv.fr/security-policy
 
 4. Exclusions
 
