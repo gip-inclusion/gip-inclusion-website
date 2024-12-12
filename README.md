@@ -29,9 +29,8 @@ Le projet peut se lancer en local ou avec Docker.
 # Configurer et activer l'environnement virtuel
 python -m venv venv
 . venv/bin/activate
-
-# Installer les packages requis
-pip install -r requirements.txt
+pip install uv
+uv pip sync --require-hashes requirements.txt
 ```
 
 #### Copier les variables d'environnement
@@ -70,8 +69,14 @@ accessibles sur votre machine pour lancer les tests E2E.  Sur MacOS,
 vous pouvez les installer via [brew](https://brew.sh/) avec la commande: `brew install geckodriver`.
 
 Vous pouvez également générer un rapport sur la couverture de tests :
-```sh 
+```sh
 coverage run manage.py test --settings config.settings_test
+```
+
+#### Mettre à jour les paquets Python
+
+```
+uv pip compile --generate-hashes requirements.in -o requirements.txt
 ```
 
 ### via Docker

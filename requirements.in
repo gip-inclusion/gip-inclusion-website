@@ -1,0 +1,24 @@
+Django==4.2.*
+black
+boto3
+dj-database-url
+dj-static
+django-dsfr
+django-markdownify
+django-sass-processor
+django-storages
+djlint
+factory-boy
+flake8
+gunicorn
+# https://github.com/lundberg/respx/pull/278
+httpx<0.28.0
+isort
+libsass
+pre-commit
+psycopg2-binary
+python-dotenv
+respx
+wagtail==5.*
+wagtailmenus
+whitenoise
