@@ -3,7 +3,7 @@ black
 boto3
 dj-database-url
 dj-static
-django-dsfr
+django-dsfr==0.12.*
 django-markdownify
 django-sass-processor
 django-storages
