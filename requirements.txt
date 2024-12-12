@@ -206,7 +206,6 @@ django==4.2.17 \
     # via
     #   -r requirements.in
     #   dj-database-url
-    #   django-crispy-forms
     #   django-dsfr
     #   django-filter
     #   django-markdownify
@@ -221,13 +220,9 @@ django-cogwheels==0.3 \
     --hash=sha256:197bd05e7114403d7301214b3f8a371c4fb6039cf21c811f099438b167b5ed21 \
     --hash=sha256:848a4d9f2c96c582a4a4f2e7c276dfd95ab3905748cae13bb7c4b365a6717e94
     # via wagtailmenus
-django-crispy-forms==2.3 \
-    --hash=sha256:2db17ae08527201be1273f0df789e5f92819e23dd28fec69cffba7f3762e1a38 \
-    --hash=sha256:efc4c31e5202bbec6af70d383a35e12fc80ea769d464fb0e7fe21768bb138a20
-    # via django-dsfr
-django-dsfr==1.4.4 \
-    --hash=sha256:1b52811c1d71f813afdc36fdf45ed298cadb684d8fcc330ce2343328dfd46317 \
-    --hash=sha256:b8ba3fd4b72c1a3ac52c82835035f8fbe6f83fd40f17aa2f73bdcee8805f7e3b
+django-dsfr==0.12.0 \
+    --hash=sha256:83b45aaaa46de82ffa63a97d782d436cd19936c94fe40d46c080a5f032de49b6 \
+    --hash=sha256:b7e7f78d9b503e81bb7f46c370df9980ad1daba231daf5ef8eac264b337b4c50
     # via -r requirements.in
 django-filter==23.5 \
     --hash=sha256:67583aa43b91fe8c49f74a832d95f4d8442be628fd4c6d65e9f811f5153a4e5c \
