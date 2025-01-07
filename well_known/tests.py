@@ -14,7 +14,6 @@ class TestMTASTS(TestCase):
         response = self.client.get(
             reverse("mta-sts"),
             HTTP_HOST="localhost",
-            SERVER_NAME="localhost",
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
@@ -29,7 +28,6 @@ class TestMTASTS(TestCase):
                 response = self.client.get(
                     reverse("mta-sts"),
                     HTTP_HOST=domain,
-                    SERVER_NAME=domain,
                 )
                 self.assertEqual(response.status_code, 200)
                 policy_path = pathlib.Path(settings.BASE_DIR) / "static" / ".well-known" / f"mta-sts.{domain}.txt"
