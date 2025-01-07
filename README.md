@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-- Python 3.10
+- Python [(version)](./python-version)
 - Postgreql 14.x.
 
 ## Installer les pre-commit hooks
