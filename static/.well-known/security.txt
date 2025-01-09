@@ -1,4 +1,4 @@
-Contact: mailto:service.securite@gip-inclusion.org
+Contact: security@inclusion.gouv.fr
 Policy: https://inclusion.gouv.fr/.well-known/security-policy.txt
 Preferred-Languages: fr, en
 Expires: 2027-01-01T00:00:00.000Z
