@@ -3,17 +3,19 @@
 ## Prérequis
 
 - Python [(version)](./python-version)
-- Postgreql 14.x.
+- [docker](https://docs.docker.com/get-started/get-docker/)
+- [docker-compose](https://docs.docker.com/compose/install/)
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
 ## Installer les pre-commit hooks
 
-```
+```sh
 pre-commit install
 ```
 
 On peut faire un premier test en faisant tourner :
 
-```
+```sh
 pre-commit run --all-files
 ```
 
@@ -23,41 +25,53 @@ Le projet peut se lancer en local ou avec Docker.
 
 ### En local
 
+#### Lancer les containers
+
+```sh
+docker-compose up
+```
+
+#### Définir les variables d'environnement
+
+```sh
+cp .env.example .env
+$EDITOR .env
+```
+
 #### Créer un environnement virtuel
 
-```
+```sh
 # Configurer et activer l'environnement virtuel
-python -m venv venv
-. venv/bin/activate
-pip install uv
+uv venv
+. .venv/bin/activate
 uv pip sync --require-hashes requirements.txt
 ```
 
 #### Copier les variables d'environnement
 
-```
+```sh
 cp .env.example .env
+```
+
+#### Configurer le bucket
+
+```sh
+python manage.py configure_bucket
 ```
 
 #### Lancer le serveur
 
-```
+```sh
 python manage.py runserver
 ```
 
 #### Lancer les migrations
 
-```
+```sh
 python manage.py migrate
 ```
 
 #### Effectuer les tests
-
-D'abord installer les dépendances de test :
-
-```sh
-pip install -r requirements.txt
-```
 
 Les tests unitaires peuvent être lancés avec `make test-units`, les
 tests E2E avec `make test-e2e`, les deux avec `make test`.
@@ -77,20 +91,6 @@ coverage run manage.py test --settings config.settings_test
 
 ```
 uv pip compile --generate-hashes requirements.in -o requirements.txt
-```
-
-### via Docker
-
-#### Copier les variables d'environnement
-
-```sh
-cp .env.example .env
-```
-
-#### Lancer les containers
-
-```sh
-docker-compose up
 ```
 
 ### Premier lancement

@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "markdownify",
     "cms",
     "services",
+    "files",
 ]
 
 MIDDLEWARE = [
