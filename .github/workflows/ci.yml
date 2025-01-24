@@ -23,8 +23,8 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: Setup virtual environment
         run: |
-          uv venv venv
-          echo "venv/bin" >> $GITHUB_PATH
+          uv venv
+          echo ".venv/bin" >> $GITHUB_PATH
       - name: 🌍 Install dependencies
         run: uv pip sync requirements.txt
       - name: 📄 Copy empty .env.test to .env
@@ -38,7 +38,7 @@ jobs:
       - name: 🚧 Check pending migrations
         run: |
           django-admin makemigrations --check --dry-run --noinput
-      - name: 🤹‍ Run the unit tests
+      - name: 🤹 Run the unit tests
         run: |
           make test-unit
         env:
