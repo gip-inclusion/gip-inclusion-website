@@ -101,6 +101,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.envrc
 env/
 venv/
 ENV/
@@ -113,6 +114,9 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
+
+# Project specific
+staticfiles/
 
 # mkdocs documentation
 /site
