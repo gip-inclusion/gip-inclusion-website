@@ -15,8 +15,8 @@ def serve_text_file(request, file_name):
 
 def mta_sts(request):
     match request.get_host():
-        case "inclusion.beta.gouv.fr" | "inclusion.gouv.fr" as domain:
-            return serve_text_file(request, f"mta-sts.{domain}.txt")
+        case "inclusion.gouv.fr":
+            return serve_text_file(request, "mta-sts.inclusion.gouv.fr.txt")
         case "localhost":
             return HttpResponse(
                 "Content depends on the domain, because MX servers are per domain.".encode(),

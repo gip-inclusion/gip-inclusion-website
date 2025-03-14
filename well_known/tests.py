@@ -21,14 +21,12 @@ class TestMTASTS(TestCase):
             b"Content depends on the domain, because MX servers are per domain.",
         )
 
-    @override_settings(ALLOWED_HOSTS=["inclusion.beta.gouv.fr", "inclusion.gouv.fr"])
+    @override_settings(ALLOWED_HOSTS=["inclusion.gouv.fr"])
     def test_access_from_domain(self):
-        for domain in settings.ALLOWED_HOSTS:
-            with self.subTest(domain):
-                response = self.client.get(
-                    reverse("mta-sts"),
-                    HTTP_HOST=domain,
-                )
-                self.assertEqual(response.status_code, 200)
-                policy_path = pathlib.Path(settings.BASE_DIR) / "static" / ".well-known" / f"mta-sts.{domain}.txt"
-                self.assertEqual(response.content, policy_path.read_bytes())
+        response = self.client.get(
+            reverse("mta-sts"),
+            HTTP_HOST="inclusion.gouv.fr",
+        )
+        self.assertEqual(response.status_code, 200)
+        policy_path = pathlib.Path(settings.BASE_DIR) / "static" / ".well-known" / "mta-sts.inclusion.gouv.fr.txt"
+        self.assertEqual(response.content, policy_path.read_bytes())
