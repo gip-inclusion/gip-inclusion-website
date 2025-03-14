@@ -15,7 +15,7 @@ def serve_text_file(request, file_name):
 
 def mta_sts(request):
     match request.get_host():
-        case "inclusion.gouv.fr":
+        case "mta-sts.inclusion.gouv.fr":
             return serve_text_file(request, "mta-sts.inclusion.gouv.fr.txt")
         case "localhost":
             return HttpResponse(
