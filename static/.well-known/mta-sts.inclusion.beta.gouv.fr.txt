@@ -1,5 +1,0 @@
-version: STSv1
-mode: enforce
-mx: mx1.alwaysdata.com.
-mx: mx2.alwaysdata.com.
-max_age: 604800
