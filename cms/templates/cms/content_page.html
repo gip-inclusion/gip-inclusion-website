@@ -9,7 +9,6 @@
     {% endblock description %}
 {% endif %}
 {% block content %}
-    {% include "cms/breadcrumb.html" %}
     {# Display Django message info from previous form #}
     {% if messages %}
         <div class="fr-container fr-mt-6w">
@@ -39,6 +38,7 @@
         {% if block.block_type == 'hero' %}
             {% include "cms/blocks/hero.html" %}
         {% elif block.block_type == 'title' %}
+            {% include "cms/breadcrumb.html" %}
             <div class="fr-container fr-mt-6w">
                 <div class="fr-grid-row fr-grid-row--gutters">
                     <div class="fr-col-12{% if not block.value.large %} fr-col-offset-md-2 fr-col-md-8{% endif %}">
