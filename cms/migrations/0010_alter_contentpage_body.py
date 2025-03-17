@@ -25,7 +25,12 @@ class Migration(migrations.Migration):
                         "hero",
                         wagtail.blocks.StructBlock(
                             [
-                                ("bg_image", wagtail.images.blocks.ImageChooserBlock(label="Image d'arrière plan")),
+                                (
+                                    "bg_image",
+                                    wagtail.images.blocks.ImageChooserBlock(
+                                        label="Image d'arrière plan", required=False
+                                    ),
+                                ),
                                 (
                                     "bg_color",
                                     wagtail.blocks.CharBlock(
