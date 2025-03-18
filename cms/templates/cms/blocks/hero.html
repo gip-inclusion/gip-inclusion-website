@@ -1,7 +1,12 @@
 {% load wagtailimages_tags %}
 {% image block.value.bg_image original as bg_img %}
 <div class="hero"
-     style="background: url({{ bg_img.url }}) {{ block.value.bg_color }} no-repeat center">
+    {% if bg_img.url %}
+        style="background: url({{ bg_img.url }}) {{ block.value.bg_color }} no-repeat center"
+    {% else %}
+        style="background-color: {{ block.value.bg_color }}"
+    {% endif %}
+    >
     <div class="fr-container fr-py-14w">
         <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col fr-col-12 fr-col-md-6">

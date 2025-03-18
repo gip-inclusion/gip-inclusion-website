@@ -15,7 +15,7 @@ class WithSpacingBlock(blocks.StructBlock):
 
 
 class HeroBlock(blocks.StructBlock):
-    bg_image = ImageChooserBlock(label="Image d'arrière plan")
+    bg_image = ImageChooserBlock(label="Image d'arrière plan", required=False)
     bg_color = blocks.CharBlock(
         label="Couleur d'arrière plan au format hexa (Ex: #f5f5fe)",
         min_length=4,
