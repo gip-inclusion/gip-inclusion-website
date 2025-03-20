@@ -1,7 +1,6 @@
 from django.urls import path
 
-from .views import serve_text_file
-
+from well_known.views import serve_text_file
 
 urlpatterns = [
     path("pdi-pgp.asc", serve_text_file, {"file_name": "pdi-pgp.asc"}, name="pdi-pgp"),

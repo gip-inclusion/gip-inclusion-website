@@ -2,7 +2,6 @@ from django import template
 
 from services.models import ServicePage
 
-
 register = template.Library()
 
 

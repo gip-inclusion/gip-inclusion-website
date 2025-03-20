@@ -1,30 +1,32 @@
 {% load static dsfr_tags %}
 {% load sass_tags %}
-<!doctype html>
-<html lang="fr"
-      {% if SITE_CONFIG.mourning %}data-fr-mourning{% endif %}>
+<!DOCTYPE html>
+<html lang="fr" {% if SITE_CONFIG.mourning %}data-fr-mourning{% endif %}>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="keywords"
+              content="inclusion, gouv, IAE, insertion, emploi, numérique" />
         {% block description %}
-            <meta name="description" content=""/>
+            <meta name="description" content="" />
         {% endblock description %}
         {% dsfr_css %}
         {% block extra_css %}
-            <link rel="stylesheet" href="/static/dsfr/dist/utility/utility.min.css"/>
+            <link rel="stylesheet"
+                  href="{% static "dsfr/dist/utility/utility.min.css" %}" />
             <link href="{% sass_src 'css/style.sass' %}"
                   rel="stylesheet"
-                  type="text/css"/>
+                  type="text/css" />
         {% endblock extra_css %}
-        <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}"/>
+        <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}" />
         <link rel="icon"
               href="{% static 'images/favicon.svg' %}"
-              type="image/svg+xml"/>
+              type="image/svg+xml" />
         <link rel="shortcut icon"
               href="{% static 'images/favicon.ico' %}"
-              type="image/x-icon"/>
-        <meta name="theme-color" content="#ffffff"/>
+              type="image/x-icon" />
+        <meta name="theme-color" content="#ffffff" />
         {% block title %}
             <title>
                 {% if title %}

@@ -7,7 +7,6 @@ from django.core.management.base import BaseCommand, CommandError
 from cms.models import ContentPage
 from services.models import Member, ServicePage
 
-
 BETA_GOUV_ENDPOINT = "https://beta.gouv.fr/api/v2.5"
 BETA_GOUV_STARTUPS_ENDPOINT = f"{BETA_GOUV_ENDPOINT}/startups.json"  # used to get service informations
 BETA_GOUV_STARTUPS_DETAILS_ENDPOINT = f"{BETA_GOUV_ENDPOINT}/startups_details.json"  # use to know active members
@@ -29,7 +28,6 @@ class Command(BaseCommand):
         )
 
     def sync_services(self):
-
         self.stdout.write("Fetch services data")
         self.gip_startups = []
         resp = httpx.get(BETA_GOUV_STARTUPS_ENDPOINT)

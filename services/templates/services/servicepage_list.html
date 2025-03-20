@@ -1,12 +1,10 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static dsfr_tags wagtailcore_tags wagtailimages_tags %}
 {% block content %}
     <div style="background: url({% static 'images/fond-nos-services.png' %}) #f5f5fe no-repeat center">
         <div class="fr-container fr-mt-1w">
             <div class="fr-grid-row fr-grid-row--gutters">
-                <div class="fr-col-12">
-                    {% dsfr_breadcrumb %}
-                </div>
+                <div class="fr-col-12">{% dsfr_breadcrumb %}</div>
             </div>
         </div>
         <div class="fr-container fr-pb-14w">
@@ -28,7 +26,10 @@
                                     {% if service.logo %}
                                         {% image service.logo fill-40x40 height="20" width="20" alt="" %}
                                     {% else %}
-                                        <img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />
+                                        <img src="{% static 'images/service-missing-logo-20.png' %}"
+                                             height="20"
+                                             width="20"
+                                             alt="" />
                                     {% endif %}
                                     {{ service.beta_name }}
                                 </h3>
