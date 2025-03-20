@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags markdownify %}
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — La plateforme de l'inclusion</title>
@@ -60,29 +60,29 @@
         {% elif block.block_type == 'image' %}
             <div class="fr-container fr-my-3w">
                 <div class="fr-grid-row fr-grid-row--gutters">
-                    <div class="fr-col-12">{% include "cms/blocks/image.html"  %}</div>
+                    <div class="fr-col-12">{% include "cms/blocks/image.html" %}</div>
                 </div>
             </div>
         {% elif block.block_type == 'alert' %}
-            {% include "cms/blocks/alert.html"  %}
+            {% include "cms/blocks/alert.html" %}
         {% elif block.block_type == 'callout' %}
-            {% include "cms/blocks/callout.html"  %}
+            {% include "cms/blocks/callout.html" %}
         {% elif block.block_type == 'quote' %}
             <div class="fr-background-alt--blue-france fr-my-6w fr-py-6w">
                 <div class="fr-container">
                     <div class="fr-grid-row fr-grid-row--gutters">
-                        <div class="fr-col-8 fr-col-offset-2">{% include "cms/blocks/quote.html"  %}</div>
+                        <div class="fr-col-8 fr-col-offset-2">{% include "cms/blocks/quote.html" %}</div>
                     </div>
                 </div>
             </div>
         {% elif block.block_type == 'video' %}
             <div class="fr-container fr-my-3w">
                 <div class="fr-grid-row fr-grid-row--gutters">
-                    <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-8">{% include "cms/blocks/video.html"  %}</div>
+                    <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-8">{% include "cms/blocks/video.html" %}</div>
                 </div>
             </div>
         {% elif block.block_type == 'multicolumns' %}
-            {% include "cms/blocks/multicolumns.html"  %}
+            {% include "cms/blocks/multicolumns.html" %}
         {% elif block.block_type == 'faq' %}
             {% include "cms/blocks/faq.html" with faq_id=forloop.counter0 %}
         {% elif block.block_type == 'stepper' %}
@@ -100,12 +100,8 @@
                     <div class="fr-card">
                         <div class="fr-card__body">
                             <div class="fr-card__content">
-                                <h3 class="fr-card__title">
-                                    {{ member.beta_fullname }}
-                                </h3>
-                                <p class="fr-card__desc">
-                                    {{ member.beta_role }}
-                                </p>
+                                <h3 class="fr-card__title">{{ member.beta_fullname }}</h3>
+                                <p class="fr-card__desc">{{ member.beta_role }}</p>
                                 <div class="fr-card__start">
                                     <ul class="fr-tags-group">
                                         {% for service in member.services.all %}
@@ -121,9 +117,17 @@
                             <div class="fr-card__img">
                                 <div class="avatar fr-py-2w">
                                     {% if member.beta_github %}
-                                        <img class="avatar-rounded" src="https://avatars3.githubusercontent.com/{{ member.beta_github }}?s=600" alt="">
+                                        <img class="avatar-rounded"
+                                             src="https://avatars3.githubusercontent.com/{{ member.beta_github }}?s=600"
+                                             height="174"
+                                             width="174"
+                                             alt="">
                                     {% else %}
-                                        <img class="avatar-rounded" src="{% static 'images/avatar-generique.jpg' %}" alt="">
+                                        <img class="avatar-rounded"
+                                             src="{% static 'images/avatar-generique.jpg' %}"
+                                             height="174"
+                                             width="174"
+                                             alt="">
                                     {% endif %}
                                 </div>
                             </div>

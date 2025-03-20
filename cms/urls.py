@@ -6,7 +6,6 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from cms import views
 
-
 urlpatterns = [
     path("cms-admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),

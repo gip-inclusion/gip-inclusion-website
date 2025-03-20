@@ -21,13 +21,12 @@ test: test-e2e test-unit
 
 .PHONY: quality
 quality:
-	$(EXEC_CMD) black --check --exclude=.venv .
-	$(EXEC_CMD) isort --check --skip-glob="**/migrations" --extend-skip-glob=".venv" .
-	$(EXEC_CMD) flake8 --count --show-source --statistics --exclude=.venv .
+	$(EXEC_CMD) ruff format --check
+	$(EXEC_CMD) ruff check
+	$(EXEC_CMD) djlint --lint --check .
 
 .PHONY: fix
 fix:
-	$(EXEC_CMD) black --exclude=.venv .
-	$(EXEC_CMD) isort --skip-glob="**/migrations" --extend-skip-glob=".venv" .
-	$(EXEC_CMD) djhtml $(shell find templates -name "*.html")
-	$(EXEC_CMD) flake8 --exclude=.venv .
+	$(EXEC_CMD) ruff format
+	$(EXEC_CMD) ruff check --fix
+	$(EXEC_CMD) djlint --reformat templates
