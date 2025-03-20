@@ -1,22 +1,32 @@
 {% extends "dsfr/header.html" %}
 {% load static wagtailcore_tags wagtailimages_tags menu_tags services_tags %}
 {% block brand %}
-    <p class="fr-logo">République<br />Française</p>
+    <p class="fr-logo">
+        République
+        <br />
+        Française
+    </p>
 {% endblock brand %}
 {% block service_title %}
-    <a href="/" title="Accueil — La plateforme de l’inclusion">        
+    <a href="{% url 'wagtail_serve' '' %}"
+       title="Accueil — La plateforme de l’inclusion">
         <p class="fr-header__service-title">
-            <img class="fr-responsive-img logo" src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}" alt="La Plateforme de l’inclusion">
+            <img class="fr-responsive-img logo"
+                 src="{% static 'images/logo-plateforme-inclusion-horizontal.svg' %}"
+                 height="75"
+                 width="180"
+                 alt="La Plateforme de l’inclusion">
         </p>
     </a>
 {% endblock service_title %}
 {% block service_tagline %}
 {% endblock service_tagline %}
 {% block header_tools %}
-    <div class="fr-header__tools-links">{% flat_menu handle="header_tools" template="menus/custom_flat_menu.html"  %}</div>
-    <button id="btn-menu-services" class="fr-btn fr-btn--tertiary fr-nav__btn" aria-expanded="false" aria-controls="menu-services">
-        Accéder aux services
-    </button>
+    <div class="fr-header__tools-links">{% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}</div>
+    <button id="btn-menu-services"
+            class="fr-btn fr-btn--tertiary fr-nav__btn"
+            aria-expanded="false"
+            aria-controls="menu-services">Accéder aux services</button>
     <div id="menu-services" class="fr-collapse">
         <div class="menu-services-container">
             <p>
@@ -31,7 +41,10 @@
                             {% if service.logo %}
                                 {% image service.logo fill-40x40 height="20" width="20" alt="" %}
                             {% else %}
-                                <img src="{% static 'images/service-missing-logo-20.png' %}" alt="" />
+                                <img src="{% static 'images/service-missing-logo-20.png' %}"
+                                     height="20"
+                                     width="20"
+                                     alt="" />
                             {% endif %}
                             {{ service.beta_name }}
                         </a>
