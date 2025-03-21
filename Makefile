@@ -4,6 +4,10 @@ else
 	EXEC_CMD := docker compose exec -ti web
 endif
 
+.PHONY: runserver
+runserver:
+	$(EXEC_CMD) python manage.py runserver
+
 .PHONY: web-prompt
 web-prompt:
 	$(EXEC_CMD) bash
