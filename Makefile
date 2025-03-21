@@ -30,3 +30,7 @@ fix:
 	$(EXEC_CMD) ruff format
 	$(EXEC_CMD) ruff check --fix
 	$(EXEC_CMD) djlint --reformat templates
+
+.PHONY: runserver
+runserver:
+	$(EXEC_CMD) python manage.py runserver
