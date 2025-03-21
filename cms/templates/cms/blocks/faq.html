@@ -21,7 +21,9 @@
                                 </button>
                             </h3>
                             <div class="fr-collapse"
-                                 id="accordion-{{ faq_id }}-{{ forloop.counter0 }}">{{ subblock.value.answer|richtext }}</div>
+                                 id="accordion-{{ faq_id }}-{{ forloop.counter0 }}">
+                                {{ subblock.value.answer|richtext }}
+                            </div>
                         </section>
                     {% endif %}
                 {% endfor %}

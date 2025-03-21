@@ -5,16 +5,14 @@
         <div class="fr-card__content">
             <h3 class="fr-card__title">
                 {% if block.value.url %}
-                    <a href="{{ block.value.url }}">
+                    <a href="{{ block.value.url }}">{{ block.value.title }}</a>
                 {% elif block.value.document %}
-                    <a href="{{ block.value.document.url }}">
-                {% endif %}
+                    <a href="{{ block.value.document.url }}">{{ block.value.title }}</a>
+                {% else %}
                     {{ block.value.title }}
-                {% if block.value.url or block.value.document.url %}</a>{% endif %}
+                {% endif %}
             </h3>
-            {% if block.value.text %}
-                <p class="fr-card__desc">{{ block.value.text|linebreaksbr }}</p>
-            {% endif %}
+            {% if block.value.text %}<p class="fr-card__desc">{{ block.value.text|linebreaksbr }}</p>{% endif %}
         </div>
     </div>
     <div class="fr-card__header">

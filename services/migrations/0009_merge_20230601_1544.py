@@ -4,7 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("services", "0008_alter_servicepage_beta_id_member"),
         ("services", "0008_alter_servicepage_body"),

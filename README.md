@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-- Python [(version)](./python-version)
+- Python [(version)](./pyproject.toml)
 - [docker](https://docs.docker.com/get-started/get-docker/)
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)

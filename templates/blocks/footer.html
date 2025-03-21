@@ -14,33 +14,25 @@
                             <a class="fr-btn--linkedin fr-btn"
                                href="https://www.linkedin.com/company/inclusion-gouv/"
                                target="_blank"
-                               title="Page Linkedin de La Plateforme de l'inclusion - nouvelle fenêtre">
-                                linkedin
-                            </a>
+                               title="Page Linkedin de La Plateforme de l'inclusion - nouvelle fenêtre">linkedin</a>
                         </li>
                         <li>
                             <a class="fr-btn--facebook fr-btn"
                                href="https://www.facebook.com/inclusion.gouv/"
                                target="_blank"
-                               title="Page Facebook de La Plateforme de l'inclusion - nouvelle fenêtre">
-                                facebook
-                            </a>
+                               title="Page Facebook de La Plateforme de l'inclusion - nouvelle fenêtre">facebook</a>
                         </li>
                         <li>
                             <a class="fr-btn--instagram fr-btn"
                                href="https://www.instagram.com/inclusion_gouv/"
                                target="_blank"
-                               title="Page Instagram de La Plateforme de l'inclusion - nouvelle fenêtre">
-                                instagram
-                            </a>
+                               title="Page Instagram de La Plateforme de l'inclusion - nouvelle fenêtre">instagram</a>
                         </li>
                         <li>
                             <a class="fr-btn--twitter fr-btn"
                                href="https://twitter.com/inclusion_gouv"
                                target="_blank"
-                               title="Compte Twitter de La Plateforme de l'inclusion - nouvelle fenêtre">
-                                twitter
-                            </a>
+                               title="Compte Twitter de La Plateforme de l'inclusion - nouvelle fenêtre">twitter</a>
                         </li>
                     </ul>
                 </div>
@@ -58,11 +50,11 @@
                 </div>
                 <div class="fr-col-12 fr-col-sm-2 fr-col-md-2">
                     <h3 class="fr-footer__top-cat">Ressources</h3>
-                    {% flat_menu handle="footer_ressources" template="menus/footer_menu.html"  %}
+                    {% flat_menu handle="footer_ressources" template="menus/footer_menu.html" %}
                 </div>
                 <div class="fr-col-12 fr-col-sm-2 fr-col-md-2">
                     <h3 class="fr-footer__top-cat">Liens externes</h3>
-                    {% flat_menu handle="header_tools" template="menus/footer_menu.html"  %}
+                    {% flat_menu handle="header_tools" template="menus/footer_menu.html" %}
                 </div>
                 <div class="fr-col-12 fr-col-sm-6 fr-col-md-6">
                     <div class="fr-grid-row">
@@ -79,7 +71,7 @@
                                         <a class="fr-footer__top-link" href="{% pageurl service %}">{{ service.beta_name }}</a>
                                     </li>
                                     {# create new col every 5 items #}
-                                    {% if not forloop.last and forloop.counter|divisibleby:5  %}
+                                    {% if not forloop.last and forloop.counter|divisibleby:5 %}
                                     </ul>
                                 </div>
                                 <div class="fr-col-12 fr-col-md-3">
@@ -98,15 +90,17 @@
             <div class="fr-footer__brand fr-enlarge-link">
                 <p class="fr-logo">
                     République
-                    <br/>
+                    <br />
                     Française
                 </p>
                 <a class="fr-footer__brand-link"
-                   href="/"
+                   href="{% url 'wagtail_serve' '' %}"
                    title="Retour à l'accueil du site - La Plateforme de l'inclusion">
                     <img class="fr-footer__logo"
                          src="{% static 'images/logo-plateforme-inclusion-vertical.svg' %}"
-                         alt="Logo de la Plateforme de l'inclusion"/>
+                         alt="Logo de la Plateforme de l'inclusion"
+                         height="130"
+                         width="130" />
                 </a>
             </div>
             <div class="fr-footer__content">
@@ -128,7 +122,7 @@
             </div>
         </div>
         <div class="fr-footer__bottom">
-            {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html"  %}
+            {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html" %}
             <div class="fr-footer__bottom-copy">
                 <p>
                     Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"

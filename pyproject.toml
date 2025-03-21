@@ -1,2 +1,18 @@
-[tool.black]
-line_length = 119
+[project]
+requires-python = ">=3.13"
+
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.lint]
+extend-select = ["I", "UP", "TID"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.djlint]
+profile="django"
+ignore="H021"

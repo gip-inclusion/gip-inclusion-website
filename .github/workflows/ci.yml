@@ -30,7 +30,7 @@ jobs:
       - name: 📄 Copy empty .env.test to .env
         run: |
           cp .env.test .env
-      - name: ✨ Black, isort, flake8
+      - name: ✨ Code Quality
         run: |
           make quality
         env:
