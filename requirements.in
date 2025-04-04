@@ -19,4 +19,5 @@ respx
 ruff
 wagtail==5.*
 wagtailmenus
+wagtail-modeladmin
 whitenoise

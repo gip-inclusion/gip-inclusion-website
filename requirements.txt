@@ -833,7 +833,12 @@ wagtail==5.2.8 \
     --hash=sha256:dc2bfa1b7f434515182bc81c7a6e7a3b59c93f15f3ccd06c6389de2f26e4099d
     # via
     #   -r requirements.in
+    #   wagtail-modeladmin
     #   wagtailmenus
+wagtail-modeladmin==2.1.0 \
+    --hash=sha256:4ef3cfde4fb4858e8e17e26bb322ea1d44836c07b3e016d6921599caba67503a \
+    --hash=sha256:a83502b0c02d2376cde33d81eb607ae10be95840b35072404cca877da161f7da
+    # via -r requirements.in
 wagtailmenus==4.0.2 \
     --hash=sha256:8f200d380bbf109ad902b4b3e85d1e2b006c47eb0625a154402700ca618afe8c \
     --hash=sha256:b82d136aa1bb02004b6d466f750c20368b8d213d88c13229448b2ab2e41bb143
