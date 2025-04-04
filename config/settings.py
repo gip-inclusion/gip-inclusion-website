@@ -235,6 +235,8 @@ WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
     ("footer", "Menu en pied de page"),
     ("footer_ressources", "Menu Ressources du pied de page"),
 )
+WAGTAILMENUS_FLAT_MENUS_EDITABLE_IN_WAGTAILADMIN = True
+WAGTAILMENUS_MAIN_MENUS_EDITABLE_IN_WAGTAILADMIN = True
 
 WAGTAILEMBEDS_FINDERS = [
     {
