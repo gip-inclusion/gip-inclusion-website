@@ -174,9 +174,12 @@ django==4.2.20 \
     #   django-modelcluster
     #   django-permissionedforms
     #   django-storages
+    #   django-stubs-ext
     #   django-taggit
+    #   django-tasks
     #   django-treebeard
     #   djangorestframework
+    #   laces
     #   wagtail
 django-cogwheels==0.3 \
     --hash=sha256:197bd05e7114403d7301214b3f8a371c4fb6039cf21c811f099438b167b5ed21 \
@@ -210,9 +213,17 @@ django-storages==1.14.5 \
     --hash=sha256:5ce9c69426f24f379821fd688442314e4aa03de87ae43183c4e16915f4c165d4 \
     --hash=sha256:ace80dbee311258453e30cd5cfd91096b834180ccf09bc1f4d2cb6d38d68571a
     # via -r requirements.in
-django-taggit==4.0.0 \
-    --hash=sha256:4d52de9d37245a9b9f98c0ec71fdccf1d2283e38e8866d40a7ae6a3b6787a161 \
-    --hash=sha256:eb800dabef5f0a4e047ab0751f82cf805bc4a9e972037ef12bf519f52cd92480
+django-stubs-ext==5.1.3 \
+    --hash=sha256:3e60f82337f0d40a362f349bf15539144b96e4ceb4dbd0239be1cd71f6a74ad0 \
+    --hash=sha256:64561fbc53e963cc1eed2c8eb27e18b8e48dcb90771205180fe29fc8a59e55fd
+    # via django-tasks
+django-taggit==6.1.0 \
+    --hash=sha256:ab776264bbc76cb3d7e49e1bf9054962457831bd21c3a42db9138b41956e4cf0 \
+    --hash=sha256:c4d1199e6df34125dd36db5eb0efe545b254dec3980ce5dd80e6bab3e78757c3
+    # via wagtail
+django-tasks==0.6.1 \
+    --hash=sha256:4086e7eb9e965f79c4ac76f5c3690ec3bf41c461585237b71b4bde729ced9826 \
+    --hash=sha256:b3648e28bdcda809cb7831f3aff98aa46c327025447c462b8943cce9dfbb0281
     # via wagtail
 django-treebeard==4.7.1 \
     --hash=sha256:846e462904b437155f76e04907ba4e48480716855f88b898df4122bdcfbd6e98 \
@@ -288,10 +299,6 @@ h11==0.14.0 \
     --hash=sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d \
     --hash=sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761
     # via httpcore
-html5lib==1.1 \
-    --hash=sha256:0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d \
-    --hash=sha256:b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f
-    # via wagtail
 httpcore==1.0.7 \
     --hash=sha256:8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c \
     --hash=sha256:a3fff8f43dc260d5bd363d9f9cf1830fa3a458b332856f34282de498ed420edd
@@ -329,9 +336,9 @@ json5==0.10.0 \
     --hash=sha256:19b23410220a7271e8377f81ba8aacba2fdd56947fbb137ee5977cbe1f5e8dfa \
     --hash=sha256:e66941c8f0a02026943c52c2eb34ebeb2a6f819a0be05920a6f5243cd30fd559
     # via djlint
-l18n==2021.3 \
-    --hash=sha256:1956e890d673d17135cc20913253c154f6bc1c00266c22b7d503cc1a5a42d848 \
-    --hash=sha256:78495d1df95b6f7dcc694d1ba8994df709c463a1cbac1bf016e1b9a5ce7280b9
+laces==0.1.2 \
+    --hash=sha256:3218e09c1889ae5cf3fc7a82f5bb63ec0c7879889b6a9760bfc42323c694b84d \
+    --hash=sha256:980cdaf9a31e883a2b8198132e2388931a4eb8814f5bfa5d8bba13ff9f657b7c
     # via wagtail
 libsass==0.23.0 \
     --hash=sha256:31e86d92a5c7a551df844b72d83fc2b5e50abc6fbbb31e296f7bebd6489ed1b4 \
@@ -579,10 +586,6 @@ python-dotenv==1.0.1 \
     --hash=sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca \
     --hash=sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a
     # via -r requirements.in
-pytz==2025.1 \
-    --hash=sha256:89dd22dca55b46eac6eda23b2d72721bf1bdfef212645d81513ef5d03038de57 \
-    --hash=sha256:c2db42be2a2518b28e65f9207c4d05e6ff547d1efa4086469ef855e4ab70178e
-    # via l18n
 pyyaml==6.0.2 \
     --hash=sha256:01179a4a8559ab5de078078f37e5c1a30d76bb88519906844fd7bdea1b7729ff \
     --hash=sha256:0833f8694549e586547b576dcfaba4a6b55b9e96098b36cdc7ebefe667dfed48 \
@@ -775,9 +778,7 @@ six==1.17.0 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
     # via
     #   cssbeautifier
-    #   html5lib
     #   jsbeautifier
-    #   l18n
     #   python-dateutil
 sniffio==1.3.1 \
     --hash=sha256:2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2 \
@@ -814,6 +815,8 @@ typing-extensions==4.12.2 \
     # via
     #   anyio
     #   dj-database-url
+    #   django-stubs-ext
+    #   django-tasks
 tzdata==2025.1 \
     --hash=sha256:24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694 \
     --hash=sha256:7e127113816800496f027041c570f50bcd464a020098a3b6b199517772303639
@@ -828,9 +831,9 @@ virtualenv==20.29.3 \
     --hash=sha256:3e3d00f5807e83b234dfb6122bf37cfadf4be216c53a49ac059d02414f819170 \
     --hash=sha256:95e39403fcf3940ac45bc717597dba16110b74506131845d9b687d5e73d947ac
     # via pre-commit
-wagtail==5.2.8 \
-    --hash=sha256:92262336a6744de1b3015ae3c04135edd5e4d7722fb2e99e1b6e9191686bc3f9 \
-    --hash=sha256:dc2bfa1b7f434515182bc81c7a6e7a3b59c93f15f3ccd06c6389de2f26e4099d
+wagtail==6.4.1 \
+    --hash=sha256:85206f86b04876d5596190e042d30de0430fdb5cdd71b6005748c8a0d45066ec \
+    --hash=sha256:cec3e6d4920a6d178fa1eb6f4af80b370fdd5570ed924b979104e157f10ca097
     # via
     #   -r requirements.in
     #   wagtail-modeladmin
@@ -848,13 +851,12 @@ webencodings==0.5.1 \
     --hash=sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923
     # via
     #   bleach
-    #   html5lib
     #   tinycss2
 whitenoise==6.9.0 \
     --hash=sha256:8c4a7c9d384694990c26f3047e118c691557481d624f069b7f7752a2f735d609 \
     --hash=sha256:c8a489049b7ee9889617bb4c274a153f3d979e8f51d2efd0f5b403caf41c57df
     # via -r requirements.in
-willow==1.6.3 \
-    --hash=sha256:143cefd30d3bb816cdff857c454da24991dda35a0315ea795101675e0b14262f \
-    --hash=sha256:f4b17a16c6315864604dadb6cdf2987d0b685e295cca74c6da28b94167a3126e
+willow==1.9.0 \
+    --hash=sha256:11a13097cffe501898cd434bb5761fb6cdbdb774a7853094cb56a4ba57cbbff7 \
+    --hash=sha256:ffac1406275ae30b60e7c6cbd1245f0bc359d1b5731002b18a712aaf424a5102
     # via wagtail
