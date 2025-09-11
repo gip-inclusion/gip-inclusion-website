@@ -9,8 +9,7 @@ django-storages
 djlint
 factory-boy
 gunicorn
-# https://github.com/lundberg/respx/pull/278
-httpx<0.28.0
+httpx
 libsass
 pre-commit
 psycopg2-binary
